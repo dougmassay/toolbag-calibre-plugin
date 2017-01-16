@@ -12,7 +12,7 @@ from calibre.customize import EditBookToolPlugin
 PLUGIN_NAME = "Diaps Editing Toolbag"
 PLUGIN_SAFE_NAME = PLUGIN_NAME.strip().lower().replace(' ', '_')
 PLUGIN_DESCRIPTION = 'Various tools for ebook editing.'
-PLUGIN_VERSION_TUPLE = (0, 3, 2)
+PLUGIN_VERSION_TUPLE = (0, 3, 3)
 PLUGIN_VERSION = '.'.join([str(x) for x in PLUGIN_VERSION_TUPLE])
 PLUGIN_AUTHORS = 'DiapDealer'
 
