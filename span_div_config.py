@@ -42,7 +42,7 @@ class ConfigWidget(Dialog):
         Dialog.__init__(self, _('Edit Spans & Divs Customization'), '{}plugin:spandiv_config'.format(PLUGIN_SAFE_NAME), gui)
 
     def setup_ui(self):
-        layout = QVBoxLayout(self)
+        layout = QVBoxLayout()
         self.setLayout(layout)
 
         label = QLabel(_('Choices to change "span" elements to:'), self)
@@ -126,7 +126,7 @@ class ConfigWidget(Dialog):
         layout.addWidget(self.attrs_txtBox)
 
         layout.addSpacing(10)
-        right_layout = QHBoxLayout(self)
+        right_layout = QHBoxLayout()
         right_layout.setAlignment(Qt.AlignRight)
         layout.addLayout(right_layout)
         reset_button = QPushButton(_('Reset all defaults'), self)
