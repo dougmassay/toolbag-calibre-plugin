@@ -69,7 +69,7 @@ class RemoveDialog(Dialog):
         tag_layout.addWidget(label)
         self.tag_combo = QComboBox()
         tag_layout.addWidget(self.tag_combo)
-        self.tag_combo.addItems(['span', 'div', 'i', 'b', 'u', 'small', 'a', 'section', 'blockquote'])
+        self.tag_combo.addItems(['span', 'div', 'p', 'i', 'em', 'b', 'strong', 'u', 'small', 'a', 'section', 'blockquote'])
         self.tag_combo.currentIndexChanged.connect(self.update_gui)
 
         attr_layout = QHBoxLayout()
@@ -103,12 +103,21 @@ class RemoveDialog(Dialog):
         elif unicode(self.tag_combo.currentText()) == 'div':
             self.newtag_combo.addItem(self.NO_CHANGE_STR)
             self.newtag_combo.addItems(self.prefs['div_changes'])
+        elif unicode(self.tag_combo.currentText()) == 'p':
+            self.newtag_combo.addItem(self.NO_CHANGE_STR)
+            self.newtag_combo.addItems(self.prefs['p_changes'])
         elif unicode(self.tag_combo.currentText()) == 'i':
             self.newtag_combo.addItem(self.NO_CHANGE_STR)
             self.newtag_combo.addItems(self.prefs['i_changes'])
+        elif unicode(self.tag_combo.currentText()) == 'em':
+            self.newtag_combo.addItem(self.NO_CHANGE_STR)
+            self.newtag_combo.addItems(self.prefs['em_changes'])
         elif unicode(self.tag_combo.currentText()) == 'b':
             self.newtag_combo.addItem(self.NO_CHANGE_STR)
             self.newtag_combo.addItems(self.prefs['b_changes'])
+        elif unicode(self.tag_combo.currentText()) == 'strong':
+            self.newtag_combo.addItem(self.NO_CHANGE_STR)
+            self.newtag_combo.addItems(self.prefs['strong_changes'])
         elif unicode(self.tag_combo.currentText()) == 'u':
             self.newtag_combo.addItem(self.NO_CHANGE_STR)
             self.newtag_combo.addItems(self.prefs['u_changes'])
@@ -163,14 +172,26 @@ class RemoveDialog(Dialog):
             self.newtag_combo.clear()
             self.newtag_combo.addItem(self.NO_CHANGE_STR)
             self.newtag_combo.addItems(self.prefs['div_changes'])
+        elif unicode(self.tag_combo.currentText()) == 'p':
+            self.newtag_combo.clear()
+            self.newtag_combo.addItem(self.NO_CHANGE_STR)
+            self.newtag_combo.addItems(self.prefs['p_changes'])
         elif unicode(self.tag_combo.currentText()) == 'i':
             self.newtag_combo.clear()
             self.newtag_combo.addItem(self.NO_CHANGE_STR)
             self.newtag_combo.addItems(self.prefs['i_changes'])
+        elif unicode(self.tag_combo.currentText()) == 'em':
+            self.newtag_combo.clear()
+            self.newtag_combo.addItem(self.NO_CHANGE_STR)
+            self.newtag_combo.addItems(self.prefs['em_changes'])
         elif unicode(self.tag_combo.currentText()) == 'b':
             self.newtag_combo.clear()
             self.newtag_combo.addItem(self.NO_CHANGE_STR)
             self.newtag_combo.addItems(self.prefs['b_changes'])
+        elif unicode(self.tag_combo.currentText()) == 'strong':
+            self.newtag_combo.clear()
+            self.newtag_combo.addItem(self.NO_CHANGE_STR)
+            self.newtag_combo.addItems(self.prefs['strong_changes'])
         elif unicode(self.tag_combo.currentText()) == 'u':
             self.newtag_combo.clear()
             self.newtag_combo.addItem(self.NO_CHANGE_STR)

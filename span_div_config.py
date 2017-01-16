@@ -24,8 +24,11 @@ plugin_prefs = JSONConfig('plugins/{0}_SpanDivEdit_settings'.format(PLUGIN_SAFE_
 # Set default preferences
 plugin_prefs.defaults['span_changes'] = ['em', 'strong', 'i', 'b', 'small', 'u']
 plugin_prefs.defaults['div_changes'] = ['p', 'blockquote']
+plugin_prefs.defaults['p_changes'] = ['div']
 plugin_prefs.defaults['i_changes'] = ['em', 'span']
+plugin_prefs.defaults['em_changes'] = ['i', 'span']
 plugin_prefs.defaults['b_changes'] = ['strong', 'span']
+plugin_prefs.defaults['strong_changes'] = ['b', 'span']
 plugin_prefs.defaults['u_changes'] = ['span']
 plugin_prefs.defaults['a_changes'] = []
 plugin_prefs.defaults['small_changes'] = ['span']
@@ -54,17 +57,35 @@ class ConfigWidget(Dialog):
         layout.addWidget(label)
         layout.addWidget(self.div_txtBox)
 
+        label = QLabel(_('Choices to change "p" elements to:'), self)
+        self.p_txtBox = QLineEdit(', '.join(plugin_prefs['p_changes']), self)
+        self.p_txtBox.setToolTip('<p>{}'.format(_('Comma separated list of html elements (no quotes, no angle "&lt;" brackets).')))
+        layout.addWidget(label)
+        layout.addWidget(self.p_txtBox)
+
         label = QLabel(_('Choices to change "i" elements to:'), self)
         self.i_txtBox = QLineEdit(', '.join(plugin_prefs['i_changes']), self)
         self.i_txtBox.setToolTip('<p>{}'.format(_('Comma separated list of html elements (no quotes, no angle "&lt;" brackets).')))
         layout.addWidget(label)
         layout.addWidget(self.i_txtBox)
 
+        label = QLabel(_('Choices to change "em" elements to:'), self)
+        self.em_txtBox = QLineEdit(', '.join(plugin_prefs['em_changes']), self)
+        self.em_txtBox.setToolTip('<p>{}'.format(_('Comma separated list of html elements (no quotes, no angle "&lt;" brackets).')))
+        layout.addWidget(label)
+        layout.addWidget(self.em_txtBox)        
+
         label = QLabel(_('Choices to change "b" elements to:'), self)
         self.b_txtBox = QLineEdit(', '.join(plugin_prefs['b_changes']), self)
         self.b_txtBox.setToolTip('<p>{}'.format(_('Comma separated list of html elements (no quotes, no angle "&lt;" brackets).')))
         layout.addWidget(label)
         layout.addWidget(self.b_txtBox)
+
+        label = QLabel(_('Choices to change "strong" elements to:'), self)
+        self.strong_txtBox = QLineEdit(', '.join(plugin_prefs['strong_changes']), self)
+        self.strong_txtBox.setToolTip('<p>{}'.format(_('Comma separated list of html elements (no quotes, no angle "&lt;" brackets).')))
+        layout.addWidget(label)
+        layout.addWidget(self.strong_txtBox)
 
         label = QLabel(_('Choices to change "u" elements to:'), self)
         self.u_txtBox = QLineEdit(', '.join(plugin_prefs['u_changes']), self)
@@ -130,13 +151,25 @@ class ConfigWidget(Dialog):
         tmp_list = [x.strip(' ') for x in tmp_list]
         plugin_prefs['div_changes'] = filter(None, tmp_list)
 
+        tmp_list = unicode(self.p_txtBox.displayText()).split(',')
+        tmp_list = [x.strip(' ') for x in tmp_list]
+        plugin_prefs['p_changes'] = filter(None, tmp_list)
+
         tmp_list = unicode(self.i_txtBox.displayText()).split(',')
         tmp_list = [x.strip(' ') for x in tmp_list]
         plugin_prefs['i_changes'] = filter(None, tmp_list)
 
+        tmp_list = unicode(self.em_txtBox.displayText()).split(',')
+        tmp_list = [x.strip(' ') for x in tmp_list]
+        plugin_prefs['em_changes'] = filter(None, tmp_list)
+
         tmp_list = unicode(self.b_txtBox.displayText()).split(',')
         tmp_list = [x.strip(' ') for x in tmp_list]
         plugin_prefs['b_changes'] = filter(None, tmp_list)
+
+        tmp_list = unicode(self.strong_txtBox.displayText()).split(',')
+        tmp_list = [x.strip(' ') for x in tmp_list]
+        plugin_prefs['strong_changes'] = filter(None, tmp_list)
 
         tmp_list = unicode(self.u_txtBox.displayText()).split(',')
         tmp_list = [x.strip(' ') for x in tmp_list]
@@ -170,8 +203,11 @@ class ConfigWidget(Dialog):
         if question_dialog(self.gui, caption, msg, det_msg):
             plugin_prefs['span_changes'] = ['em', 'strong', 'i', 'b', 'small', 'u']
             plugin_prefs['div_changes'] = ['p', 'blockquote']
+            plugin_prefs['p_changes'] = ['div']
             plugin_prefs['i_changes'] = ['em', 'span']
+            plugin_prefs['em_changes'] = ['i', 'span']
             plugin_prefs['b_changes'] = ['strong', 'span']
+            plugin_prefs['strong_changes'] = ['b', 'span']
             plugin_prefs['u_changes'] = ['span']
             plugin_prefs['a_changes'] = []
             plugin_prefs['small_changes'] = ['span']
