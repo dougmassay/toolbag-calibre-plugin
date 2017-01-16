@@ -48,7 +48,7 @@ class MarkupParser(object):
             b = p
             while s[p:p+1] != '=' : p += 1
             aname = s[b:p]
-            if aname not in SVG_ATTR:
+            if aname.strip() not in SVG_ATTR:
                 aname = aname.lower()
             aname = aname.rstrip(' ')
             p += 1
@@ -130,11 +130,20 @@ class MarkupParser(object):
             info = s[p:-1]
             tattr = {}
             tattr['info'] = info
+        if tname == "svg":
+            if ttype == 'end':
+                ttype = 'passthru-end'
+            else:
+                ttype = 'passthru'
+            info = s[p:-1]
+            tattr = {}
+            tattr['info'] = info
         if tname.startswith("?"):
             ttype = 'passthru'
             info = s[p:-2]
             tattr = {}
             tattr['info'] = info
+
         if ttype is None:
             # parse any attributes
             # tattr = {}
@@ -142,13 +151,13 @@ class MarkupParser(object):
 
             tattr = OrderedDict()
             while s.find('=',p) != -1 :
-                while s[p:p+1] == ' ' : p += 1
+                while s[p:p+1] in (' ', '\r', '\n') : p += 1
                 b = p
                 while s[p:p+1] != '=' : p += 1
                 aname = s[b:p]
-                if aname not in SVG_ATTR:
+                if aname.strip() not in SVG_ATTR:
                     aname = aname.lower()
-                aname = aname.rstrip(' ')
+                aname = aname.rstrip()
                 p += 1
                 while s[p:p+1] == ' ' : p += 1
                 if s[p:p+1] == '"' :
@@ -301,13 +310,17 @@ class MarkupParser(object):
             tattr = {}
 
         # handle passthru special cases
-        if ttype == 'passthru':
+        if ttype.startswith('passthru'):
             if tname == '!--':
                 return '<!--{0}-->'.format(tattr.get('info',' '))
             if tname == '!DOCTYPE':
                 return '<!DOCTYPE{}>'.format(tattr.get('info',''))
             if tname == '![CDATA[*':
                 return '<![CDATA[*{}>'.format(tattr.get('info',''))
+            if tname == 'svg':
+                if ttype == 'passthru-end':
+                    return '</svg>'
+                return '<svg{}>'.format(tattr.get('info',''))
             if tname.startswith('?'):
                 return "<{0}{1}?>".format(tname, tattr.get('info',''))
 
