@@ -33,7 +33,9 @@ To create the plugin zip file, run the setup.py script (root of the repository t
 
     $python setup.py
 
-You can also add a -d (or --debug) option to setup.py.** If calibre is installed and on your
+You can also add a -d (or --debug) option to setup.py.
+
+** If calibre is installed and on your
 path and you add the '-d' option, setup.py will attempt to:
 
     1) close calibre if it's open
@@ -77,7 +79,7 @@ Feel free to fork the repository and submit pull requests (or just use it privat
 License Information
 =======
 
-###Diaps Editing Toolbag (a calibe plugin)
+###Diaps Editing Toolbag (a calibre plugin)
 
     Licensed under the GPLv3.
 
