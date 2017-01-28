@@ -34,14 +34,16 @@ PLUGIN_FILES = ['__init__.py',
             'utilities.py'
 ]
 
+
 def findVersion():
     pattern = r'PLUGIN_VERSION_TUPLE = \((\d+),\s?(\d+),\s?(\d+)\)'
     with open('__init__.py', 'r') as fd:
         data = fd.read()
     match = re.search(pattern, data)
     if match is not None:
-        return '{}{}{}'.format(match.group(1), match.group(2), match.group(3))
+        return '{}.{}.{}'.format(match.group(1), match.group(2), match.group(3))
     return '0XXX'
+
 
 # Find version info from __init__.py and build zip file name from it
 VERS_INFO =  findVersion()
@@ -83,7 +85,7 @@ def zipUpDir(myzip, tdir, localname):
             zipUpDir(myzip, tdir, localfilePath)
 
 def removePreviousZip():
-    print ('Removing any leftover zip files ...')
+    print('Removing any leftover zip files ...')
     for each in glob.glob('diaps_toolbag_v*_plugin.zip'):
         path = os.path.join(SCRIPT_DIR, each)
         if os.path.exists(path):
@@ -100,7 +102,7 @@ if __name__ == "__main__":
     print('Removing any previous build leftovers ...')
     removePreviousZip()
 
-    print ('Creating {} ...'.format(os.path.basename(PLUGIN_NAME)))
+    print('Creating {} ...'.format(os.path.basename(PLUGIN_NAME)))
     files = os.listdir(SCRIPT_DIR)
     outzip = zipfile.ZipFile(PLUGIN_NAME, 'w')
     for entry in files:
@@ -111,7 +113,7 @@ if __name__ == "__main__":
             zipUpDir(outzip, SCRIPT_DIR, entry)
     outzip.close()
 
-    print ('Plugin successfully created!')
+    print('Plugin successfully created!')
 
     if options.debugmode:
         print('\nAttempting to install plugin and launch calibre ...')

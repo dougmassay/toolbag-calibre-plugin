@@ -27,6 +27,31 @@ from calibre_plugins.diaps_toolbag.__init__ import (PLUGIN_NAME, PLUGIN_SAFE_NAM
 
 PLUGIN_PATH = os.path.join(config_dir, 'plugins', '{}.zip'.format(PLUGIN_NAME))
 
+# To add a new tag, add it to TAGLIST and add a list of tags it can be changed to to CHANGE_TO_MAP.
+TAGLIST = ['span', 'div', 'p', 'i', 'em', 'b', 'strong', 'u', 'small', 'a', 'blockquote', 'header',
+           'section', 'footer', 'nav', 'article']
+
+CHANGE_TO_MAP = {
+    'span'       : ['em', 'strong', 'i', 'b', 'small', 'u'],
+    'div'        : ['p', 'blockquote'],
+    'p'          : ['div'],
+    'i'          : ['em', 'span'],
+    'em'         : ['i', 'span'],
+    'b'          : ['strong', 'span'],
+    'strong'     : ['b', 'span'],
+    'u'          : ['span'],
+    'small'      : ['span'],
+    'a'          : [],
+    'blockquote' : ['div'],
+    'header'     : ['div'],
+    'section'    : ['div'],
+    'footer'     : ['div'],
+    'nav'        : ['div'],
+    'article'    : ['div'],
+}
+
+ATTRS_LIST = ['class', 'id', 'style', 'href']
+
 class RemoveDialog(Dialog):
     def __init__(self, parent):
         from calibre_plugins.diaps_toolbag.span_div_config import plugin_prefs as prefs
@@ -34,6 +59,7 @@ class RemoveDialog(Dialog):
         self.prefs = prefs
         self.parent = parent
         self.help_file_name = '{0}_span_div_help.html'.format(PLUGIN_SAFE_NAME)
+        self.taglist = TAGLIST
         Dialog.__init__(self, _('Edit Spans & Divs'), 'toolbag_spans_divs_dialog', parent)
 
     def setup_ui(self):
@@ -69,7 +95,7 @@ class RemoveDialog(Dialog):
         tag_layout.addWidget(label)
         self.tag_combo = QComboBox()
         tag_layout.addWidget(self.tag_combo)
-        self.tag_combo.addItems(['span', 'div', 'p', 'i', 'em', 'b', 'strong', 'u', 'small', 'a', 'section', 'blockquote'])
+        self.tag_combo.addItems(self.taglist)
         self.tag_combo.currentIndexChanged.connect(self.update_gui)
 
         attr_layout = QHBoxLayout()
@@ -97,42 +123,10 @@ class RemoveDialog(Dialog):
         newtag_layout.addWidget(label)
         self.newtag_combo = QComboBox()
         newtag_layout.addWidget(self.newtag_combo)
-        if unicode(self.tag_combo.currentText()) == 'span':
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['span_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'div':
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['div_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'p':
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['p_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'i':
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['i_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'em':
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['em_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'b':
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['b_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'strong':
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['strong_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'u':
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['u_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'small':
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['small_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'a':
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['a_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'section':
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['sec_changes'])
-        else:
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['block_changes'])
+
+        self.newtag_combo.addItem(self.NO_CHANGE_STR)
+        self.newtag_combo.addItems(self.prefs['{}_changes'.format(unicode(self.tag_combo.currentText()))])
+
         if self.action_combo.currentIndex() == 0:
             self.newtag_combo.setDisabled(True)
 
@@ -164,54 +158,11 @@ class RemoveDialog(Dialog):
         else:
             self.srch_txt.setDisabled(False)
             self.srch_method.setDisabled(False)
-        if unicode(self.tag_combo.currentText()) == 'span':
-            self.newtag_combo.clear()
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['span_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'div':
-            self.newtag_combo.clear()
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['div_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'p':
-            self.newtag_combo.clear()
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['p_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'i':
-            self.newtag_combo.clear()
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['i_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'em':
-            self.newtag_combo.clear()
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['em_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'b':
-            self.newtag_combo.clear()
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['b_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'strong':
-            self.newtag_combo.clear()
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['strong_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'u':
-            self.newtag_combo.clear()
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['u_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'small':
-            self.newtag_combo.clear()
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['small_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'a':
-            self.newtag_combo.clear()
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['a_changes'])
-        elif unicode(self.tag_combo.currentText()) == 'section':
-            self.newtag_combo.clear()
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['sec_changes'])
-        else:
-            self.newtag_combo.clear()
-            self.newtag_combo.addItem(self.NO_CHANGE_STR)
-            self.newtag_combo.addItems(self.prefs['block_changes'])
+
+        self.newtag_combo.clear()
+        self.newtag_combo.addItem(self.NO_CHANGE_STR)
+        self.newtag_combo.addItems(self.prefs['{}_changes'.format(unicode(self.tag_combo.currentText()))])
+
         if self.action_combo.currentIndex() == 0:
             self.newtag_combo.setCurrentIndex(0)
             self.newtag_combo.setDisabled(True)
@@ -344,7 +295,7 @@ class PunctDialog(Dialog):
                   _('-- = emdash | --- = endash'), _('--- = emdash | -- = endash')]
         self.dashes_combo.addItems(values)
         self.dashes_combo.setCurrentIndex(self.prefs['dashes'])
-        #self.dashes_combo.currentIndexChanged.connect(self.update_gui)
+        # self.dashes_combo.currentIndexChanged.connect(self.update_gui)
 
         self.ellipses = QCheckBox(_('Smarten ellipses'), self)
         layout.addWidget(self.ellipses)
@@ -476,7 +427,7 @@ class PunctDialog(Dialog):
             with codecs.open(filename, encoding=enc, mode='r') as fd:
                 words_list = [line.rstrip() for line in fd]
             words_list = filter(None, words_list)
-            print ('Exceptions list:', words_list)
+            print('Exceptions list:', words_list)
         except:
             pass
         return words_list
@@ -509,7 +460,7 @@ class ShowProgressDialog(QProgressDialog):
 
         self.setLabelText('{0}: {1}'.format(self.action_type, name))
         # Send the necessary data to the callback function in main.py.
-        print ('Processing {0}'.format(name))
+        print('Processing {0}'.format(name))
         htmlstr = self.callback_fn(data, self.criteria)
         new_hash = md5(htmlstr).digest()
         if new_hash != orig_hash:

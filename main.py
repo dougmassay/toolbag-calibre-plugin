@@ -48,14 +48,13 @@ class SpanDivEdit(Tool):
             # register it for the action created for the menu, not the toolbar,
             # to avoid a double trigger
             self.register_shortcut(ac, 'edit-spans-divs', default_keys=('Ctrl+Shift+Alt+E',))
-        else:
-            menu = QMenu()
-            ac.setMenu(menu)
-            checked_menu_item = menu.addAction(_('Edit current file only'), self.toggle_parse_current)
-            checked_menu_item.setCheckable(True)
-            checked_menu_item.setChecked(self.parse_current)
-            menu.addSeparator()
-            config_menu_item = menu.addAction(_('Customize'), self.show_configuration)
+        menu = QMenu()
+        ac.setMenu(menu)
+        checked_menu_item = menu.addAction(_('Edit current file only'), self.toggle_parse_current)
+        checked_menu_item.setCheckable(True)
+        checked_menu_item.setChecked(self.parse_current)
+        menu.addSeparator()
+        config_menu_item = menu.addAction(_('Customize'), self.show_configuration)
         ac.triggered.connect(self.dispatcher)
         return ac
 
@@ -168,12 +167,11 @@ class SmarterPunct(Tool):
             # register it for the action created for the menu, not the toolbar,
             # to avoid a double trigger
             self.register_shortcut(ac, 'smarter-punctuation', default_keys=('Ctrl+Shift+Alt+S',))
-        else:
-            menu = QMenu()
-            ac.setMenu(menu)
-            checked_menu_item = menu.addAction(_('Smarten current file only'), self.toggle_parse_current)
-            checked_menu_item.setCheckable(True)
-            checked_menu_item.setChecked(self.parse_current)
+        menu = QMenu()
+        ac.setMenu(menu)
+        checked_menu_item = menu.addAction(_('Smarten current file only'), self.toggle_parse_current)
+        checked_menu_item.setCheckable(True)
+        checked_menu_item.setChecked(self.parse_current)
         ac.triggered.connect(self.dispatcher)
         return ac
 
@@ -303,12 +301,11 @@ class CSScm2em(Tool):
             # register it for the action created for the menu, not the toolbar,
             # to avoid a double trigger
             self.register_shortcut(ac, 'css-cms-to-ems', default_keys=('Ctrl+Shift+Alt+C',))
-        else:
-            menu = QMenu()
-            ac.setMenu(menu)
-            checked_menu_item = menu.addAction(_('Convert current CSS file only'), self.toggle_parse_current)
-            checked_menu_item.setCheckable(True)
-            checked_menu_item.setChecked(self.parse_current)
+        menu = QMenu()
+        ac.setMenu(menu)
+        checked_menu_item = menu.addAction(_('Convert current CSS file only'), self.toggle_parse_current)
+        checked_menu_item.setCheckable(True)
+        checked_menu_item.setChecked(self.parse_current)
         ac.triggered.connect(self.dispatcher)
         return ac
 
