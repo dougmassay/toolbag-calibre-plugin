@@ -46,6 +46,12 @@ class ConfigWidget(Dialog):
         num_cols = len(TAGLIST)/col_limit
         num_cols = int(math.ceil(num_cols))
 
+        # If the column limit and the number of columns produces a single
+        # orphan text entry widget, reduce the column limit accordingly.
+        if num_cols > 1 and (len(TAGLIST) - ((num_cols - 1)*col_limit)) < 2:
+            if num_cols >= 3:
+                col_limit -= 1
+
         # Create an integer-indexed dictionary of QVBoxLayouts representing the number of
         # columns necessary. Added left to right in the parent QHBoxLayout.
         column = {}
@@ -65,8 +71,9 @@ class ConfigWidget(Dialog):
                 column[curr_col].addStretch()
                 curr_col += 1
                 curr_item = 1
-            # Add lable and QLinEdit widget to current column.
-            label = QLabel(_('Choices to change "{}" elements to:'.format(tag)), self)
+            # Add lable and QLineEdit widget to current column.
+            label = QLabel(_('<b>Choices to change "{}" elements to:</b>'.format(tag)), self)
+            label.setAlignment(Qt.AlignCenter)
             self.qlinedit_widgets[tag] = QLineEdit(', '.join(plugin_prefs['{}_changes'.format(tag)]), self)
             self.qlinedit_widgets[tag].setToolTip('<p>{}'.format(tooltip))
             column[curr_col].addWidget(label)
@@ -81,7 +88,7 @@ class ConfigWidget(Dialog):
         attrs_layout = QVBoxLayout()
         attrs_layout.setAlignment(Qt.AlignCenter)
         layout.addLayout(attrs_layout)
-        label = QLabel(_('Attributes to search for in html elements:'), self)
+        label = QLabel(_('<b>HTML attributes available to search for:</b>'), self)
         label.setAlignment(Qt.AlignCenter)
         self.attrs_txtBox = QLineEdit(', '.join(plugin_prefs['attrs']), self)
         self.attrs_txtBox.setToolTip('<p>{}'.format(_('Comma separated list of html attribute names (no quotes).')))
