@@ -48,13 +48,14 @@ class SpanDivEdit(Tool):
             # register it for the action created for the menu, not the toolbar,
             # to avoid a double trigger
             self.register_shortcut(ac, 'edit-spans-divs', default_keys=('Ctrl+Shift+Alt+E',))
-        menu = QMenu()
-        ac.setMenu(menu)
-        checked_menu_item = menu.addAction(_('Edit current file only'), self.toggle_parse_current)
-        checked_menu_item.setCheckable(True)
-        checked_menu_item.setChecked(self.parse_current)
-        menu.addSeparator()
-        config_menu_item = menu.addAction(_('Customize'), self.show_configuration)
+        else:
+            menu = QMenu()
+            ac.setMenu(menu)
+            checked_menu_item = menu.addAction(_('Edit current file only'), self.toggle_parse_current)
+            checked_menu_item.setCheckable(True)
+            checked_menu_item.setChecked(self.parse_current)
+            menu.addSeparator()
+            config_menu_item = menu.addAction(_('Customize'), self.show_configuration)
         ac.triggered.connect(self.dispatcher)
         return ac
 

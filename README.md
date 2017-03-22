@@ -79,7 +79,7 @@ Feel free to fork the repository and submit pull requests (or just use it privat
 License Information
 =======
 
-###Diaps Editing Toolbag (a calibre plugin)
+### Diaps Editing Toolbag (a calibre plugin)
 
     Licensed under the GPLv3.
 
