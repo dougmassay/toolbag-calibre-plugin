@@ -1,0 +1,285 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# This file is distributed under the same license as the Diaps Editing Toolbag plugin package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Diaps Editing Toolbag plugin\n"
+"POT-Creation-Date: 2017-05-16 17:47+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=cp1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.2\n"
+
+#: dialogs.py:70
+msgid "Edit Spans & Divs"
+msgstr ""
+
+#: dialogs.py:73
+msgid "Delete"
+msgstr ""
+
+#: dialogs.py:74
+msgid "Modify"
+msgstr ""
+
+#: dialogs.py:75
+msgid "No attributes (\"naked\" tag)"
+msgstr ""
+
+#: dialogs.py:76
+msgid "No change"
+msgstr ""
+
+#: dialogs.py:92
+msgid "Action type:"
+msgstr ""
+
+#: dialogs.py:101
+msgid "Tag name:"
+msgstr ""
+
+#: dialogs.py:110
+msgid "Having the attribute:"
+msgstr ""
+
+#: dialogs.py:120
+msgid "Whose value is (no quotes):"
+msgstr ""
+
+#: dialogs.py:124
+msgid "Regex"
+msgstr ""
+
+#: dialogs.py:129
+msgid "Change tag to:"
+msgstr ""
+
+#: dialogs.py:142
+msgid "New attribute string to insert (entire):"
+msgstr ""
+
+#: dialogs.py:146
+msgid "Copy existing attribute string"
+msgstr ""
+
+#: dialogs.py:205 dialogs.py:215 dialogs.py:352
+msgid "Error"
+msgstr ""
+
+#: dialogs.py:206
+msgid "Must enter a value for the attribute selected"
+msgstr ""
+
+#: dialogs.py:216
+msgid "What--exactly--would that achieve?"
+msgstr ""
+
+#: dialogs.py:248 main.py:169
+msgid "Smarten Punctuation (the sequel)"
+msgstr ""
+
+#: dialogs.py:263
+msgid "Smarten Quotation marks"
+msgstr ""
+
+#: dialogs.py:272
+msgid "Use custom apostrophe exceptions file"
+msgstr ""
+
+#: dialogs.py:297
+msgid "(em|en)-dash settings"
+msgstr ""
+
+#: dialogs.py:301
+msgid "Do not educate dashes"
+msgstr ""
+
+#: dialogs.py:301
+msgid "-- = emdash (no endash support)"
+msgstr ""
+
+#: dialogs.py:302
+msgid "-- = emdash | --- = endash"
+msgstr ""
+
+#: dialogs.py:302
+msgid "--- = emdash | -- = endash"
+msgstr ""
+
+#: dialogs.py:307
+msgid "Smarten ellipses"
+msgstr ""
+
+#: dialogs.py:311
+msgid "Educate with unicode characters (instead of entities)"
+msgstr ""
+
+#: dialogs.py:323
+msgid "Select custom apostrophe exceptions file"
+msgstr ""
+
+#: dialogs.py:353
+msgid "Must select a custom exception file"
+msgstr ""
+
+#: dialogs.py:449
+msgid "Cancel"
+msgstr ""
+
+#: dialogs.py:490
+msgid "Changed Files"
+msgstr ""
+
+#: dialogs.py:508
+msgid "See what changed"
+msgstr ""
+
+#: dialogs.py:509
+msgid "Close"
+msgstr ""
+
+#: main.py:50
+msgid "Edit Spans && Divs"
+msgstr ""
+
+#: main.py:59
+msgid "Edit current file only"
+msgstr ""
+
+#: main.py:63
+msgid "Customize"
+msgstr ""
+
+#: main.py:74 main.py:191 main.py:325
+msgid "No book open"
+msgstr ""
+
+#: main.py:75 main.py:192 main.py:326
+msgid "Need to have a book open first."
+msgstr ""
+
+#: main.py:79 main.py:196 main.py:330
+msgid "Cannot Process"
+msgstr ""
+
+#: main.py:80 main.py:197
+msgid "No file open for editing or the current file is not an (x)html file."
+msgstr ""
+
+#: main.py:92
+msgid "Before: Span Div Edit"
+msgstr ""
+
+#: main.py:99 main.py:215 main.py:344
+msgid "Failed"
+msgstr ""
+
+#: main.py:100
+msgid "Failed to process divs or spans, click \"Show details\" for more info"
+msgstr ""
+
+#: main.py:115
+msgid "Nothing changed"
+msgstr ""
+
+#: main.py:116
+msgid "Nothing matching your criteria was found."
+msgstr ""
+
+#: main.py:130
+msgid "Parsing"
+msgstr ""
+
+#: main.py:178
+msgid "Smarten current file only"
+msgstr ""
+
+#: main.py:208
+msgid "Before: Smarten Punctuation"
+msgstr ""
+
+#: main.py:216
+msgid "Failed to smarten punctuation, click \"Show details\" for more info"
+msgstr ""
+
+#: main.py:231
+msgid "Nothing smartened"
+msgstr ""
+
+#: main.py:232
+msgid "No punctuation meeting your criteria was found to smarten."
+msgstr ""
+
+#: main.py:245
+msgid "Smartening"
+msgstr ""
+
+#: main.py:303
+msgid "Convert CSS cm to em"
+msgstr ""
+
+#: main.py:312
+msgid "Convert current CSS file only"
+msgstr ""
+
+#: main.py:331
+msgid "No file open for editing or the current file is not a CSS file."
+msgstr ""
+
+#: main.py:337
+msgid "Before: Convert CM to EM"
+msgstr ""
+
+#: main.py:345
+msgid "Failed to convert CMs to EMs, click \"Show details\" for more info"
+msgstr ""
+
+#: main.py:360
+msgid "Nothing Converted"
+msgstr ""
+
+#: main.py:361
+msgid "No CM dimensions were found to convert."
+msgstr ""
+
+#: span_div_config.py:42
+msgid "Edit Spans & Divs Customization"
+msgstr ""
+
+#: span_div_config.py:74
+msgid "Comma separated list of html elements (no quotes, no angle \"&lt;\" brackets)."
+msgstr ""
+
+#: span_div_config.py:82
+msgid "<b>Choices to change \"{}\" elements to:</b>"
+msgstr ""
+
+#: span_div_config.py:98
+msgid "<b>HTML attributes available to search for:</b>"
+msgstr ""
+
+#: span_div_config.py:101
+msgid "Comma separated list of html attribute names (no quotes)."
+msgstr ""
+
+#: span_div_config.py:109
+msgid "Reset all defaults"
+msgstr ""
+
+#: span_div_config.py:110
+msgid "Reset all settings to original defaults."
+msgstr ""
+
+#: span_div_config.py:133
+msgid "Are you sure?"
+msgstr ""
+
+#: span_div_config.py:134
+msgid "Reset all customizable options to their original defaults?"
+msgstr ""
