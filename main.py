@@ -7,17 +7,18 @@ __license__   = 'GPL v3'
 __docformat__ = 'restructuredtext en'
 
 try:
-    from PyQt5.Qt import QAction, QMenu, QDialog
+    from PyQt5.Qt import QAction, QMenu, QDialog, QIcon, QPixmap
 except:
-    from PyQt4.Qt import QAction, QMenu, QDialog
+    from PyQt4.Qt import QAction, QMenu, QDialog, QIcon, QPixmap
 
+import os
 
 from calibre.gui2.tweak_book.plugin import Tool
 from calibre.gui2.tweak_book import editor_name
 from calibre.gui2 import error_dialog, info_dialog
 from calibre.ebooks.oeb.polish.container import OEB_DOCS, OEB_STYLES
 
-from calibre.utils.config import JSONConfig
+from calibre.utils.config import JSONConfig, config_dir
 from calibre_plugins.diaps_toolbag.resources.html_parser import MarkupParser
 from calibre_plugins.diaps_toolbag.resources.smartypants import smartyPants
 from calibre_plugins.diaps_toolbag.utilities import unescape
@@ -25,6 +26,19 @@ from calibre_plugins.diaps_toolbag.dialogs import ResultsDialog
 
 from calibre_plugins.diaps_toolbag.__init__ import PLUGIN_SAFE_NAME
 
+def get_icon(icon_name):
+
+    # Check to see whether the icon exists as a Calibre resource
+    # This will enable skinning if the user stores icons within a folder like:
+    # ...\AppData\Roaming\calibre\resources\images\Plugin Name\
+    icon_path = os.path.join(config_dir, 'resources', 'images', 'Diaps Editing Toolbag', 
+                             icon_name.replace('images/', ''))
+    if os.path.exists(icon_path):
+        pixmap = QPixmap()
+        pixmap.load(icon_path)
+        return QIcon(pixmap)
+    # As we did not find an icon elsewhere, look within our zip resources
+    return get_icons(icon_name)
 
 # pulls in translation files for _() strings
 try:
@@ -47,7 +61,7 @@ class SpanDivEdit(Tool):
 
         # Create an action, this will be added to the plugins toolbar and
         # the plugins menu
-        ac = QAction(get_icons('images/spandivedit_icon.png'), _('Edit Spans && Divs'), self.gui)
+        ac = QAction(get_icon('images/spandivedit_icon.png'), _('Edit Spans && Divs'), self.gui)
         self.restore_prefs()
         if not for_toolbar:
             # Register a keyboard shortcut for this toolbar action. We only
@@ -167,7 +181,7 @@ class SmarterPunct(Tool):
 
         # Create an action, this will be added to the plugins toolbar and
         # the plugins menu
-        ac = QAction(get_icons('images/smarten_icon.png'), _('Smarten Punctuation (the sequel)'), self.gui)
+        ac = QAction(get_icon('images/smarten_icon.png'), _('Smarten Punctuation (the sequel)'), self.gui)
         self.restore_prefs()
         if not for_toolbar:
             # Register a keyboard shortcut for this toolbar action. We only
@@ -301,7 +315,7 @@ class CSScm2em(Tool):
 
         # Create an action, this will be added to the plugins toolbar and
         # the plugins menu
-        ac = QAction(get_icons('images/css_icon.png'), _('Convert CSS cm to em'), self.gui)
+        ac = QAction(get_icon('images/css_icon.png'), _('Convert CSS cm to em'), self.gui)
         self.restore_prefs()
         if not for_toolbar:
             # Register a keyboard shortcut for this toolbar action. We only
