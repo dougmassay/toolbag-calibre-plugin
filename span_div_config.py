@@ -20,6 +20,12 @@ from calibre.gui2.tweak_book.widgets import Dialog
 from calibre_plugins.diaps_toolbag.__init__ import PLUGIN_SAFE_NAME
 from calibre_plugins.diaps_toolbag.dialogs import TAGLIST, CHANGE_TO_MAP, ATTRS_LIST
 
+# pulls in translation files for _() strings
+try:
+    load_translations()
+except NameError:
+    pass # load_translations() added in calibre 1.9
+	
 # This is where all preferences for this plugin will be stored.
 plugin_prefs = JSONConfig('plugins/{0}_SpanDivEdit_settings'.format(PLUGIN_SAFE_NAME))
 
@@ -72,7 +78,7 @@ class ConfigWidget(Dialog):
                 curr_col += 1
                 curr_item = 1
             # Add lable and QLineEdit widget to current column.
-            label = QLabel(_('<b>Choices to change "{}" elements to:</b>'.format(tag)), self)
+            label = QLabel(_('<b>Choices to change "{}" elements to:</b>').format(tag), self)
             label.setAlignment(Qt.AlignCenter)
             self.qlinedit_widgets[tag] = QLineEdit(', '.join(plugin_prefs['{}_changes'.format(tag)]), self)
             self.qlinedit_widgets[tag].setToolTip('<p>{}'.format(tooltip))

@@ -24,7 +24,7 @@ except LookupError:
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 
-PLUGIN_DIRS = ['images', 'resources']
+PLUGIN_DIRS = ['images', 'resources', 'translations']
 
 PLUGIN_FILES = ['__init__.py',
             'dialogs.py',
