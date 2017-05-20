@@ -26,6 +26,12 @@ from calibre_plugins.diaps_toolbag.dialogs import ResultsDialog
 from calibre_plugins.diaps_toolbag.__init__ import PLUGIN_SAFE_NAME
 
 
+# pulls in translation files for _() strings
+try:
+    load_translations()
+except NameError:
+    pass # load_translations() added in calibre 1.9
+
 class SpanDivEdit(Tool):
     name = 'SpanDivEdit'
 

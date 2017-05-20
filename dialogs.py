@@ -52,6 +52,12 @@ CHANGE_TO_MAP = {
 
 ATTRS_LIST = ['class', 'id', 'style', 'href']
 
+# pulls in translation files for _() strings
+try:
+    load_translations()
+except NameError:
+    pass # load_translations() added in calibre 1.9
+
 class RemoveDialog(Dialog):
     def __init__(self, parent):
         from calibre_plugins.diaps_toolbag.span_div_config import plugin_prefs as prefs
