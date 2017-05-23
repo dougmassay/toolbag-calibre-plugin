@@ -7,279 +7,284 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Diaps Editing Toolbag plugin\n"
-"POT-Creation-Date: 2017-05-16 17:47+0200\n"
+"POT-Creation-Date: 2017-05-21 12:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=cp1252\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: dialogs.py\n"
+"X-Poedit-SearchPath-1: main.py\n"
+"X-Poedit-SearchPath-2: span_div_config.py\n"
 
-#: dialogs.py:70
+#: dialogs.py:69
 msgid "Edit Spans & Divs"
 msgstr ""
 
-#: dialogs.py:73
+#: dialogs.py:72
 msgid "Delete"
 msgstr ""
 
-#: dialogs.py:74
+#: dialogs.py:73
 msgid "Modify"
 msgstr ""
 
-#: dialogs.py:75
+#: dialogs.py:74
 msgid "No attributes (\"naked\" tag)"
 msgstr ""
 
-#: dialogs.py:76
+#: dialogs.py:75
 msgid "No change"
 msgstr ""
 
-#: dialogs.py:92
+#: dialogs.py:91
 msgid "Action type:"
 msgstr ""
 
-#: dialogs.py:101
+#: dialogs.py:100
 msgid "Tag name:"
 msgstr ""
 
-#: dialogs.py:110
+#: dialogs.py:109
 msgid "Having the attribute:"
 msgstr ""
 
-#: dialogs.py:120
+#: dialogs.py:119
 msgid "Whose value is (no quotes):"
 msgstr ""
 
-#: dialogs.py:124
+#: dialogs.py:123
 msgid "Regex"
 msgstr ""
 
-#: dialogs.py:129
+#: dialogs.py:128
 msgid "Change tag to:"
 msgstr ""
 
-#: dialogs.py:142
+#: dialogs.py:141
 msgid "New attribute string to insert (entire):"
 msgstr ""
 
-#: dialogs.py:146
+#: dialogs.py:145
 msgid "Copy existing attribute string"
 msgstr ""
 
-#: dialogs.py:205 dialogs.py:215 dialogs.py:352
+#: dialogs.py:204 dialogs.py:214 dialogs.py:351
 msgid "Error"
 msgstr ""
 
-#: dialogs.py:206
+#: dialogs.py:205
 msgid "Must enter a value for the attribute selected"
 msgstr ""
 
-#: dialogs.py:216
+#: dialogs.py:215
 msgid "What--exactly--would that achieve?"
 msgstr ""
 
-#: dialogs.py:248 main.py:169
+#: dialogs.py:247 main.py:184
 msgid "Smarten Punctuation (the sequel)"
 msgstr ""
 
-#: dialogs.py:263
+#: dialogs.py:262
 msgid "Smarten Quotation marks"
 msgstr ""
 
-#: dialogs.py:272
+#: dialogs.py:271
 msgid "Use custom apostrophe exceptions file"
 msgstr ""
 
-#: dialogs.py:297
+#: dialogs.py:296
 msgid "(em|en)-dash settings"
 msgstr ""
 
-#: dialogs.py:301
+#: dialogs.py:300
 msgid "Do not educate dashes"
 msgstr ""
 
-#: dialogs.py:301
+#: dialogs.py:300
 msgid "-- = emdash (no endash support)"
 msgstr ""
 
-#: dialogs.py:302
+#: dialogs.py:301
 msgid "-- = emdash | --- = endash"
 msgstr ""
 
-#: dialogs.py:302
+#: dialogs.py:301
 msgid "--- = emdash | -- = endash"
 msgstr ""
 
-#: dialogs.py:307
+#: dialogs.py:306
 msgid "Smarten ellipses"
 msgstr ""
 
-#: dialogs.py:311
+#: dialogs.py:310
 msgid "Educate with unicode characters (instead of entities)"
 msgstr ""
 
-#: dialogs.py:323
+#: dialogs.py:322
 msgid "Select custom apostrophe exceptions file"
 msgstr ""
 
-#: dialogs.py:353
+#: dialogs.py:352
 msgid "Must select a custom exception file"
 msgstr ""
 
-#: dialogs.py:449
+#: dialogs.py:448
 msgid "Cancel"
 msgstr ""
 
-#: dialogs.py:490
+#: dialogs.py:489
 msgid "Changed Files"
 msgstr ""
 
-#: dialogs.py:508
+#: dialogs.py:507
 msgid "See what changed"
 msgstr ""
 
-#: dialogs.py:509
+#: dialogs.py:508
 msgid "Close"
 msgstr ""
 
-#: main.py:50
+#: main.py:64
 msgid "Edit Spans && Divs"
 msgstr ""
 
-#: main.py:59
+#: main.py:74
 msgid "Edit current file only"
 msgstr ""
 
-#: main.py:63
+#: main.py:78
 msgid "Customize"
 msgstr ""
 
-#: main.py:74 main.py:191 main.py:325
+#: main.py:89 main.py:206 main.py:340
 msgid "No book open"
 msgstr ""
 
-#: main.py:75 main.py:192 main.py:326
+#: main.py:90 main.py:207 main.py:341
 msgid "Need to have a book open first."
 msgstr ""
 
-#: main.py:79 main.py:196 main.py:330
+#: main.py:94 main.py:211 main.py:345
 msgid "Cannot Process"
 msgstr ""
 
-#: main.py:80 main.py:197
+#: main.py:95 main.py:212
 msgid "No file open for editing or the current file is not an (x)html file."
 msgstr ""
 
-#: main.py:92
+#: main.py:107
 msgid "Before: Span Div Edit"
 msgstr ""
 
-#: main.py:99 main.py:215 main.py:344
+#: main.py:114 main.py:230 main.py:359
 msgid "Failed"
 msgstr ""
 
-#: main.py:100
+#: main.py:115
 msgid "Failed to process divs or spans, click \"Show details\" for more info"
 msgstr ""
 
-#: main.py:115
+#: main.py:130
 msgid "Nothing changed"
 msgstr ""
 
-#: main.py:116
+#: main.py:131
 msgid "Nothing matching your criteria was found."
 msgstr ""
 
-#: main.py:130
+#: main.py:145
 msgid "Parsing"
 msgstr ""
 
-#: main.py:178
+#: main.py:193
 msgid "Smarten current file only"
 msgstr ""
 
-#: main.py:208
+#: main.py:223
 msgid "Before: Smarten Punctuation"
 msgstr ""
 
-#: main.py:216
+#: main.py:231
 msgid "Failed to smarten punctuation, click \"Show details\" for more info"
 msgstr ""
 
-#: main.py:231
+#: main.py:246
 msgid "Nothing smartened"
 msgstr ""
 
-#: main.py:232
+#: main.py:247
 msgid "No punctuation meeting your criteria was found to smarten."
 msgstr ""
 
-#: main.py:245
+#: main.py:260
 msgid "Smartening"
 msgstr ""
 
-#: main.py:303
+#: main.py:318
 msgid "Convert CSS cm to em"
 msgstr ""
 
-#: main.py:312
+#: main.py:327
 msgid "Convert current CSS file only"
 msgstr ""
 
-#: main.py:331
+#: main.py:346
 msgid "No file open for editing or the current file is not a CSS file."
 msgstr ""
 
-#: main.py:337
+#: main.py:352
 msgid "Before: Convert CM to EM"
 msgstr ""
 
-#: main.py:345
+#: main.py:360
 msgid "Failed to convert CMs to EMs, click \"Show details\" for more info"
 msgstr ""
 
-#: main.py:360
+#: main.py:375
 msgid "Nothing Converted"
 msgstr ""
 
-#: main.py:361
+#: main.py:376
 msgid "No CM dimensions were found to convert."
 msgstr ""
 
-#: span_div_config.py:42
+#: span_div_config.py:41
 msgid "Edit Spans & Divs Customization"
 msgstr ""
 
-#: span_div_config.py:74
+#: span_div_config.py:73
 msgid "Comma separated list of html elements (no quotes, no angle \"&lt;\" brackets)."
 msgstr ""
 
-#: span_div_config.py:82
+#: span_div_config.py:81
 msgid "<b>Choices to change \"{}\" elements to:</b>"
 msgstr ""
 
-#: span_div_config.py:98
+#: span_div_config.py:97
 msgid "<b>HTML attributes available to search for:</b>"
 msgstr ""
 
-#: span_div_config.py:101
+#: span_div_config.py:100
 msgid "Comma separated list of html attribute names (no quotes)."
 msgstr ""
 
-#: span_div_config.py:109
+#: span_div_config.py:108
 msgid "Reset all defaults"
 msgstr ""
 
-#: span_div_config.py:110
+#: span_div_config.py:109
 msgid "Reset all settings to original defaults."
 msgstr ""
 
-#: span_div_config.py:133
+#: span_div_config.py:132
 msgid "Are you sure?"
 msgstr ""
 
-#: span_div_config.py:134
+#: span_div_config.py:133
 msgid "Reset all customizable options to their original defaults?"
 msgstr ""
