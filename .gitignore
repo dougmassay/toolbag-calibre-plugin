@@ -29,7 +29,7 @@ coverage.xml
 
 # Translations
 *.mo
-*.pot
+# *.pot
 
 *.log
 
