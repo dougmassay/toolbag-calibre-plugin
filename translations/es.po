@@ -6,7 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Diaps Editing Toolbag plugin\n"
-"POT-Creation-Date: 2017-05-21 12:11+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-19 18:25-0400\n"
 "PO-Revision-Date: 2017-05-22 20:07+0200\n"
 "Last-Translator: Terisa de morgan <terisam@gmail.com>\n"
 "Language-Team: \n"
@@ -81,7 +82,7 @@ msgstr "Se debe introducir un valor para el atributo seleccionado"
 msgid "What--exactly--would that achieve?"
 msgstr "¿Qué lograría eso --exactamente--?"
 
-#: dialogs.py:247 main.py:184
+#: dialogs.py:247 main.py:185
 msgid "Smarten Punctuation (the sequel)"
 msgstr "Arreglar Puntuación (la secuela)"
 
@@ -145,118 +146,118 @@ msgstr "Ver qué ha cambiado"
 msgid "Close"
 msgstr "Cerrar"
 
-#: main.py:64
+#: main.py:65
 msgid "Edit Spans && Divs"
 msgstr "Editar Spans && Divs"
 
-#: main.py:74
+#: main.py:75
 msgid "Edit current file only"
 msgstr "Editar solo el archivo actual"
 
-#: main.py:78
+#: main.py:79
 msgid "Customize"
 msgstr "Configurar"
 
-#: main.py:89 main.py:206 main.py:340
+#: main.py:90 main.py:207 main.py:331
 msgid "No book open"
 msgstr "No hay libro abierto"
 
-#: main.py:90 main.py:207 main.py:341
+#: main.py:91 main.py:208 main.py:332
 msgid "Need to have a book open first."
 msgstr "Necesitas abrir primero un libro."
 
-#: main.py:94 main.py:211 main.py:345
+#: main.py:95 main.py:212 main.py:336
 msgid "Cannot Process"
 msgstr "No puede procesarlo"
 
-#: main.py:95 main.py:212
+#: main.py:96 main.py:213
 msgid "No file open for editing or the current file is not an (x)html file."
 msgstr ""
 "No hay ning´ñun archivo abierto en edición o el archivo actual no es un "
 "archivo (x)html."
 
-#: main.py:107
+#: main.py:108
 msgid "Before: Span Div Edit"
 msgstr "Antes de: Edición de Span y Div"
 
-#: main.py:114 main.py:230 main.py:359
+#: main.py:115 main.py:231 main.py:350
 msgid "Failed"
 msgstr "Fallo"
 
-#: main.py:115
+#: main.py:116
 msgid "Failed to process divs or spans, click \"Show details\" for more info"
 msgstr ""
 "Fallo al procesar divs o spans, pulsa \"Mostrar detalles\" para más "
 "información"
 
-#: main.py:130
+#: main.py:131
 msgid "Nothing changed"
 msgstr "Nada ha cambiado"
 
-#: main.py:131
+#: main.py:132
 msgid "Nothing matching your criteria was found."
 msgstr "No se ha encontrado nada que coincida con tu criterio"
 
-#: main.py:145
+#: main.py:146
 msgid "Parsing"
 msgstr "Parseando"
 
-#: main.py:193
+#: main.py:194
 msgid "Smarten current file only"
 msgstr "Arreglar solo el archivo actual"
 
-#: main.py:223
+#: main.py:224
 msgid "Before: Smarten Punctuation"
 msgstr "Antes: Arreglar Puntuación"
 
-#: main.py:231
+#: main.py:232
 msgid "Failed to smarten punctuation, click \"Show details\" for more info"
 msgstr ""
 "Fallo al arreglar la puntuación, pulsa \"Mostrar detalles\" para más "
 "información"
 
-#: main.py:246
+#: main.py:247
 msgid "Nothing smartened"
 msgstr "No se ha arreglado nada"
 
-#: main.py:247
+#: main.py:248
 msgid "No punctuation meeting your criteria was found to smarten."
 msgstr ""
 "No se ha encontrado ninguna puntuación que arreglar que cumpla con tu "
 "criterio."
 
-#: main.py:260
+#: main.py:261
 msgid "Smartening"
 msgstr "Arreglando"
 
-#: main.py:318
+#: main.py:309
 msgid "Convert CSS cm to em"
 msgstr "Convertir cm en CSS to em"
 
-#: main.py:327
+#: main.py:318
 msgid "Convert current CSS file only"
 msgstr "Convertir solo el actual archivo CSS"
 
-#: main.py:346
+#: main.py:337
 msgid "No file open for editing or the current file is not a CSS file."
 msgstr ""
 "No hay ning´ñun archivo abierto en edición o el archivo actual no es un "
 "archivo CSS."
 
-#: main.py:352
+#: main.py:343
 msgid "Before: Convert CM to EM"
 msgstr "Antes de: Convertir CM a EM"
 
-#: main.py:360
+#: main.py:351
 msgid "Failed to convert CMs to EMs, click \"Show details\" for more info"
 msgstr ""
 "Fallo al convertir CMs a EMs, pulsa \"Mostrar detalles\" para más información"
 
-#: main.py:375
+#: main.py:366
 msgid "Nothing Converted"
 msgstr "No se ha convertido nada"
 
-#: main.py:376
+#: main.py:367
 msgid "No CM dimensions were found to convert."
 msgstr "No se han encontrado dimensiones CM que convertir."
 
