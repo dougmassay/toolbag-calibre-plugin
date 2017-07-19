@@ -24,8 +24,8 @@ from calibre_plugins.diaps_toolbag.dialogs import TAGLIST, CHANGE_TO_MAP, ATTRS_
 try:
     load_translations()
 except NameError:
-    pass # load_translations() added in calibre 1.9
-	
+    pass  # load_translations() added in calibre 1.9
+
 # This is where all preferences for this plugin will be stored.
 plugin_prefs = JSONConfig('plugins/{0}_SpanDivEdit_settings'.format(PLUGIN_SAFE_NAME))
 

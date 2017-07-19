@@ -31,7 +31,7 @@ def get_icon(icon_name):
     # Check to see whether the icon exists as a Calibre resource
     # This will enable skinning if the user stores icons within a folder like:
     # ...\AppData\Roaming\calibre\resources\images\Plugin Name\
-    icon_path = os.path.join(config_dir, 'resources', 'images', 'Diaps Editing Toolbag', 
+    icon_path = os.path.join(config_dir, 'resources', 'images', 'Diaps Editing Toolbag',
                              icon_name.replace('images/', ''))
     if os.path.exists(icon_path):
         pixmap = QPixmap()
@@ -40,11 +40,12 @@ def get_icon(icon_name):
     # As we did not find an icon elsewhere, look within our zip resources
     return get_icons(icon_name)
 
+
 # pulls in translation files for _() strings
 try:
     load_translations()
 except NameError:
-    pass # load_translations() added in calibre 1.9
+    pass  # load_translations() added in calibre 1.9
 
 class SpanDivEdit(Tool):
     name = 'SpanDivEdit'
@@ -267,23 +268,13 @@ class SmarterPunct(Tool):
     def smarten(self, data, criteria):
         from uuid import uuid4
         AMPERSAND = 'ampersand-{0}'.format(str(uuid4()))
-        START = 'comment-start-{0}'.format(str(uuid4()))
-        STOP = 'comment-stop-{0}'.format(str(uuid4()))
         smarty_attr, use_unicode, apos_words_list = criteria[0], criteria[1], criteria[2]
-
-        # protect comments
-        data = data.replace('<!--', START)
-        data = data.replace('-->', STOP)
 
         # Slightly mangle all preexisting entities so HTMLParser
         # ignores them. We'll put them all back at the end.
         data = data.replace('&', AMPERSAND)
 
         htmlstr = smartyPants(data, smarty_attr, AMPERSAND, apos_words_list)
-
-        # Put back comments
-        htmlstr = htmlstr.replace(START, '<!--')
-        htmlstr = htmlstr.replace(STOP, '-->')
 
         #  Convert the entities we created to unicode characters
         if use_unicode:

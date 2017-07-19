@@ -56,7 +56,7 @@ ATTRS_LIST = ['class', 'id', 'style', 'href']
 try:
     load_translations()
 except NameError:
-    pass # load_translations() added in calibre 1.9
+    pass  # load_translations() added in calibre 1.9
 
 class RemoveDialog(Dialog):
     def __init__(self, parent):

@@ -380,7 +380,7 @@ default_smartypants_attr = "1"
 apos_words_list = []
 AMP = ''
 
-import os
+
 try:
     import regex as re
 except ImportError:
@@ -604,7 +604,6 @@ def educateQuotes(str):
     if apos_words_list:
         # One on each line - WITHOUT the apostrophe
         try:
-            #    apos_words_list = [line.strip() for line in fd]
             for entry in apos_words_list:
                 str = re.sub(r"'("+entry+")\\b", '%s\\1' % r"""&#8217;""", str)  # , flags=re.I)
         except:
@@ -685,6 +684,15 @@ def educateQuotes(str):
             (\p{Zs} | s\b)
             """ % (close_class,), re.VERBOSE | re.UNICODE)
     str = closing_single_quotes_regex.sub(r"""\1&#8217;\2""", str)
+
+    # Added by Doug {
+    closing_single_quotes_regex = re.compile(r"""
+            #(%s)?   # character that indicates the quote should be closing
+            '
+            (?=\p{Zs})
+            """ % (close_class,), re.VERBOSE | re.UNICODE)
+    str = closing_single_quotes_regex.sub(r"""&#8217;""", str)
+    # }
 
     # Any remaining single quotes should be opening ones:
     str = re.sub(r"""'""", r"""&#8216;""", str)
@@ -817,7 +825,7 @@ def educateEllipses(str):
     """
 
     str = re.sub(r"""\.\.\.""", r"""&#8230;""", str)
-    #str = re.sub(r"""\. \. \.""", r"""&#8230;""", str)
+    # str = re.sub(r"""\. \. \.""", r"""&#8230;""", str)
     str = re.sub(r"""\.\p{Zs}\.\p{Zs}\.""", r"""&#8230;""", str, flags=re.UNICODE)
     return str
 
@@ -893,7 +901,8 @@ def _tokenize(str):
     # match = r"""(?: <! ( -- .*? -- \s* )+ > ) |  # comments
     # (?: <\? .*? \?> ) |  # directives
     # %s  # nested tags       """ % (nested_tags,)
-    tag_soup = re.compile(r"""([^<]*)(<[^>]*>)""")
+    # tag_soup = re.compile(r"""([^<]*)(<[^>]*>)""")
+    tag_soup = re.compile(r"""([^<]*)(<!--.*?--\s*>|<[^>]*>)""", re.S)
 
     token_match = tag_soup.search(str)
 
@@ -902,7 +911,13 @@ def _tokenize(str):
         if token_match.group(1):
             tokens.append(['text', token_match.group(1)])
 
-        tokens.append(['tag', token_match.group(2)])
+        tag = token_match.group(2)
+        type_ = 'tag'
+        if tag.startswith('<!--'):
+            # remove --[white space]> from the end of tag
+            if '--' in tag[4:].rstrip('>').rstrip().rstrip('-'):
+                type_ = 'text'
+        tokens.append([type_, tag])
 
         previous_end = token_match.end()
         token_match = tag_soup.search(str, token_match.end())
