@@ -6,9 +6,15 @@ from __future__ import (unicode_literals, division, absolute_import,
 __license__   = 'GPL v3'
 __docformat__ = 'restructuredtext en'
 
+import sys
+is_py3 = sys.version_info[0] == 3
 
 def unescape(text):
-    import re, htmlentitydefs
+    import re
+    if is_py3:
+        from html.entities import name2codepoint
+    else:
+        from htmlentitydefs import name2codepoint
     """Removes HTML or XML character references
       and entities from a text string.
     @param text The HTML (or XML) source text.
@@ -40,7 +46,7 @@ def unescape(text):
                 elif text[1:-1] == 'lt':
                     text = '&amp;lt;'
                 else:
-                    text = unichr(htmlentitydefs.name2codepoint[text[1:-1]])
+                    text = unichr(name2codepoint[text[1:-1]])
             except KeyError:
                 print('KeyError')
                 pass

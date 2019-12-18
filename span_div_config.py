@@ -20,6 +20,16 @@ from calibre.gui2.tweak_book.widgets import Dialog
 from calibre_plugins.diaps_toolbag.__init__ import PLUGIN_SAFE_NAME
 from calibre_plugins.diaps_toolbag.dialogs import TAGLIST, CHANGE_TO_MAP, ATTRS_LIST
 
+from calibre_plugins.diaps_toolbag.utilities import is_py3
+
+if is_py3:
+    text_type = str
+    binary_type = bytes
+else:
+    range = xrange
+    text_type = unicode
+    binary_type = str
+
 # pulls in translation files for _() strings
 try:
     load_translations()
@@ -119,11 +129,11 @@ class ConfigWidget(Dialog):
     def save_settings(self):
         # Save current dialog sttings back to JSON config file
         for tag in TAGLIST:
-            tmp_list = unicode(self.qlinedit_widgets[tag].displayText()).split(',')
+            tmp_list = text_type(self.qlinedit_widgets[tag].displayText()).split(',')
             tmp_list = [x.strip(' ') for x in tmp_list]
             plugin_prefs['{}_changes'.format(tag)] = filter(None, tmp_list)
 
-        tmp_list = unicode(self.attrs_txtBox.displayText()).split(',')
+        tmp_list = text_type(self.attrs_txtBox.displayText()).split(',')
         tmp_list = [x.strip(' ') for x in tmp_list]
         plugin_prefs['attrs'] = filter(None, tmp_list)
         self.accept()

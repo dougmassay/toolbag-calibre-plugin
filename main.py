@@ -23,6 +23,15 @@ from calibre_plugins.diaps_toolbag.resources.html_parser import MarkupParser
 from calibre_plugins.diaps_toolbag.resources.smartypants import smartyPants
 from calibre_plugins.diaps_toolbag.utilities import unescape
 from calibre_plugins.diaps_toolbag.dialogs import ResultsDialog
+from calibre_plugins.diaps_toolbag.utilities import is_py3
+
+if is_py3:
+    text_type = str
+    binary_type = bytes
+else:
+    range = xrange
+    text_type = unicode
+    binary_type = str
 
 from calibre_plugins.diaps_toolbag.__init__ import PLUGIN_SAFE_NAME
 
@@ -140,7 +149,7 @@ class SpanDivEdit(Tool):
             htmlstr = self.delete_modify(data, criteria)
             if htmlstr != data:
                 self.cleanasawhistle = False
-                container.open(name, 'wb').write(htmlstr)
+                container.open(name, 'wb').write(binary_type(htmlstr))
         else:
             from calibre_plugins.diaps_toolbag.dialogs import ShowProgressDialog
             d = ShowProgressDialog(self.gui, container, OEB_DOCS, criteria, self.delete_modify, _('Parsing'))

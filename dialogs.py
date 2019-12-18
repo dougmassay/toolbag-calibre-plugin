@@ -9,6 +9,15 @@ __docformat__ = 'restructuredtext en'
 import os
 from hashlib import md5
 from zipfile import ZipFile
+from calibre_plugins.diaps_toolbag.utilities import is_py3
+
+if is_py3:
+    text_type = str
+    binary_type = bytes
+else:
+    range = xrange
+    text_type = unicode
+    binary_type = str
 
 try:
     from PyQt5.Qt import (Qt, QVBoxLayout, QLabel, QCheckBox, QLineEdit, QTextEdit, QComboBox, QApplication,
@@ -131,7 +140,7 @@ class RemoveDialog(Dialog):
         newtag_layout.addWidget(self.newtag_combo)
 
         self.newtag_combo.addItem(self.NO_CHANGE_STR)
-        self.newtag_combo.addItems(self.prefs['{}_changes'.format(unicode(self.tag_combo.currentText()))])
+        self.newtag_combo.addItems(self.prefs['{}_changes'.format(text_type(self.tag_combo.currentText()))])
 
         if self.action_combo.currentIndex() == 0:
             self.newtag_combo.setDisabled(True)
@@ -167,7 +176,7 @@ class RemoveDialog(Dialog):
 
         self.newtag_combo.clear()
         self.newtag_combo.addItem(self.NO_CHANGE_STR)
-        self.newtag_combo.addItems(self.prefs['{}_changes'.format(unicode(self.tag_combo.currentText()))])
+        self.newtag_combo.addItems(self.prefs['{}_changes'.format(text_type(self.tag_combo.currentText()))])
 
         if self.action_combo.currentIndex() == 0:
             self.newtag_combo.setCurrentIndex(0)
@@ -196,8 +205,8 @@ class RemoveDialog(Dialog):
         if self.attr_combo.currentIndex() == self.attr_combo.count()-1:
             attribute = None
         else:
-            attribute = unicode(self.attr_combo.currentText())
-        srch_str = unicode(self.srch_txt.displayText())
+            attribute = text_type(self.attr_combo.currentText())
+        srch_str = text_type(self.srch_txt.displayText())
         if not len(srch_str):
             srch_str = None
         if srch_str is None and attribute is not None:
@@ -209,18 +218,18 @@ class RemoveDialog(Dialog):
         if self.newtag_combo.currentIndex() == 0:
             newtag = None
         else:
-            newtag = unicode(self.newtag_combo.currentText())
+            newtag = text_type(self.newtag_combo.currentText())
         if action == 'modify' and newtag is None and self.copy_attr.isChecked():
             return error_dialog(self.parent, _('Error'), '<p>{0}'.format(
                     _('What--exactly--would that achieve?')), det_msg='', show=True)
-        new_str = unicode(self.newattr_txt.displayText())
+        new_str = text_type(self.newattr_txt.displayText())
         copy_attr = False
         if self.copy_attr.isChecked():
             copy_attr = True
         if not len(new_str):
             new_str = ''
 
-        self.criteria = (srch_str, srch_method, unicode(self.tag_combo.currentText()), attribute, action, newtag, new_str, copy_attr)
+        self.criteria = (srch_str, srch_method, text_type(self.tag_combo.currentText()), attribute, action, newtag, new_str, copy_attr)
         self.accept()
 
     def getCriteria(self):
@@ -351,7 +360,7 @@ class PunctDialog(Dialog):
             return error_dialog(self.parent, _('Error'), '<p>' +
                     _('Must select a custom exception file'), det_msg='', show=True)
         if self.use_file.isChecked():
-            apos_exception_file = unicode(self.file_path.displayText())
+            apos_exception_file = text_type(self.file_path.displayText())
             if not os.path.exists(apos_exception_file):
                 apos_exception_file = None
         else:
@@ -403,7 +412,7 @@ class PunctDialog(Dialog):
     def savePrefs(self):
         self.prefs['edu_quotes'] = self.edu_quotes.isChecked()
         self.prefs['use_file'] = self.use_file.isChecked()
-        self.prefs['file_path'] = unicode(self.file_path.displayText()) if len(self.file_path.displayText()) else ''
+        self.prefs['file_path'] = text_type(self.file_path.displayText()) if len(self.file_path.displayText()) else ''
         self.prefs['dashes'] = self.dashes_combo.currentIndex()
         self.prefs['ellipses'] = self.ellipses.isChecked()
         self.prefs['unicode'] = self.unicode.isChecked()
