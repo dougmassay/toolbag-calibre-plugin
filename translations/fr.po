@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: Diaps Editing Toolbag plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-19 18:25-0400\n"
-"PO-Revision-Date: 2017-05-21 12:20+0200\n"
+"PO-Revision-Date: 2019-12-19 11:27-0500\n"
 "Last-Translator: Nicolas F.\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -23,131 +23,131 @@ msgstr ""
 "X-Poedit-SearchPath-1: main.py\n"
 "X-Poedit-SearchPath-2: span_div_config.py\n"
 
-#: dialogs.py:69
+#: dialogs.py:78
 msgid "Edit Spans & Divs"
 msgstr "Modifier Spans & Divs"
 
-#: dialogs.py:72
+#: dialogs.py:81
 msgid "Delete"
 msgstr "Supprimer"
 
-#: dialogs.py:73
+#: dialogs.py:82
 msgid "Modify"
 msgstr "Modifier"
 
-#: dialogs.py:74
+#: dialogs.py:83
 msgid "No attributes (\"naked\" tag)"
 msgstr "Pas d'attributs (balise \"nue\")"
 
-#: dialogs.py:75
+#: dialogs.py:84
 msgid "No change"
 msgstr "Aucun changement"
 
-#: dialogs.py:91
+#: dialogs.py:100
 msgid "Action type:"
 msgstr "Type d'action :"
 
-#: dialogs.py:100
+#: dialogs.py:109
 msgid "Tag name:"
 msgstr "Nom de la balise :"
 
-#: dialogs.py:109
+#: dialogs.py:118
 msgid "Having the attribute:"
 msgstr "Ayant l'attribut :"
 
-#: dialogs.py:119
+#: dialogs.py:127
 msgid "Whose value is (no quotes):"
 msgstr "Dont la valeur est (sans guillemets) :"
 
-#: dialogs.py:123
+#: dialogs.py:136
 msgid "Regex"
 msgstr "Regex"
 
-#: dialogs.py:128
+#: dialogs.py:145
 msgid "Change tag to:"
 msgstr "Remplacer la balise par :"
 
-#: dialogs.py:141
+#: dialogs.py:150
 msgid "New attribute string to insert (entire):"
 msgstr "Nouvelle chaîne d'attributs à insérer (en entier) :"
 
-#: dialogs.py:145
+#: dialogs.py:154
 msgid "Copy existing attribute string"
 msgstr "Copier la chaîne d'attributs existante"
 
-#: dialogs.py:204 dialogs.py:214 dialogs.py:351
+#: dialogs.py:213 dialogs.py:223 dialogs.py:360
 msgid "Error"
 msgstr "Erreur"
 
-#: dialogs.py:205
+#: dialogs.py:214
 msgid "Must enter a value for the attribute selected"
 msgstr "Vous devez entrer une valeur pour l'attribut sélectionné"
 
-#: dialogs.py:215
+#: dialogs.py:224
 msgid "What--exactly--would that achieve?"
 msgstr "Vous pensiez qu'il allait se passer --quoi-- exactement ?"
 
-#: dialogs.py:247 main.py:185
+#: dialogs.py:256 main.py:185
 msgid "Smarten Punctuation (the sequel)"
 msgstr "Ponctuation améliorée (la suite)"
 
-#: dialogs.py:262
+#: dialogs.py:271
 msgid "Smarten Quotation marks"
 msgstr "Améliorer les guillemets"
 
-#: dialogs.py:271
+#: dialogs.py:280
 msgid "Use custom apostrophe exceptions file"
 msgstr "Utiliser un fichier d'exception pour les apostrophes personnalisé"
 
-#: dialogs.py:296
+#: dialogs.py:305
 msgid "(em|en)-dash settings"
 msgstr "Paramètres tiret (cadratin|demi-cadratin)"
 
-#: dialogs.py:300
+#: dialogs.py:309
 msgid "Do not educate dashes"
 msgstr "Ne pas remplacer les tirets"
 
-#: dialogs.py:300
+#: dialogs.py:309
 msgid "-- = emdash (no endash support)"
 msgstr "-- = tiret cadratin (—) (Aucun support des demi-cadratin (–))"
 
-#: dialogs.py:301
+#: dialogs.py:310
 msgid "-- = emdash | --- = endash"
 msgstr "-- = tiret cadratin (—) | --- = tiret demi-cadratin (–)"
 
-#: dialogs.py:301
+#: dialogs.py:311
 msgid "--- = emdash | -- = endash"
 msgstr "--- = tiret cadratin (—) | -- = tiret demi-cadratin (–)"
 
-#: dialogs.py:306
+#: dialogs.py:315
 msgid "Smarten ellipses"
 msgstr "Améliorer ellipses"
 
-#: dialogs.py:310
+#: dialogs.py:319
 msgid "Educate with unicode characters (instead of entities)"
 msgstr "Remplacer par des caractères unicode (au lieu d'entités HTML)"
 
-#: dialogs.py:322
+#: dialogs.py:331
 msgid "Select custom apostrophe exceptions file"
 msgstr "Sélectionner un fichier d'exception pour les apostrophes personnalisé"
 
-#: dialogs.py:352
+#: dialogs.py:361
 msgid "Must select a custom exception file"
 msgstr "Vous devez sélectionner un fichier d'exception personnalisé"
 
-#: dialogs.py:448
+#: dialogs.py:457
 msgid "Cancel"
 msgstr "Annuler"
 
-#: dialogs.py:489
+#: dialogs.py:501
 msgid "Changed Files"
 msgstr "Fichiers modifiés"
 
-#: dialogs.py:507
+#: dialogs.py:519
 msgid "See what changed"
 msgstr "Voir ce qui a changé"
 
-#: dialogs.py:508
+#: dialogs.py:520
 msgid "Close"
 msgstr "Fermer"
 
@@ -266,11 +266,11 @@ msgstr "Aucun remplacement"
 msgid "No CM dimensions were found to convert."
 msgstr "Aucune dimension en CM à convertir n'a été trouvée."
 
-#: span_div_config.py:41
+#: span_div_config.py:51
 msgid "Edit Spans & Divs Customization"
 msgstr "Personnaliser Modifier Spans & Divs"
 
-#: span_div_config.py:73
+#: span_div_config.py:83
 msgid ""
 "Comma separated list of html elements (no quotes, no angle \"&lt;\" "
 "brackets)."
@@ -278,32 +278,32 @@ msgstr ""
 "Liste séparée par des virgules des balises html (sans guillemets ni &lt; ou "
 "&gt;)."
 
-#: span_div_config.py:81
+#: span_div_config.py:91
 msgid "<b>Choices to change \"{}\" elements to:</b>"
 msgstr "<b>Choix pour remplacer la balise \"{}\" :</ b>"
 
-#: span_div_config.py:97
+#: span_div_config.py:107
 msgid "<b>HTML attributes available to search for:</b>"
 msgstr "<b>Attributs HTML pouvant être recherchés :</ b>"
 
-#: span_div_config.py:100
+#: span_div_config.py:110
 msgid "Comma separated list of html attribute names (no quotes)."
 msgstr ""
 "Liste séparée par des virgules des noms d'attributs html (sans guillemets)."
 
-#: span_div_config.py:108
+#: span_div_config.py:118
 msgid "Reset all defaults"
 msgstr "Restaurer les valeurs par défaut"
 
-#: span_div_config.py:109
+#: span_div_config.py:119
 msgid "Reset all settings to original defaults."
 msgstr "Restaurer tous les réglages à leurs valeurs par défaut."
 
-#: span_div_config.py:132
+#: span_div_config.py:142
 msgid "Are you sure?"
 msgstr "Êtes-vous sûr ?"
 
-#: span_div_config.py:133
+#: span_div_config.py:143
 msgid "Reset all customizable options to their original defaults?"
 msgstr ""
 "Réinitialiser toutes les options personnalisables à leurs valeurs par défaut "

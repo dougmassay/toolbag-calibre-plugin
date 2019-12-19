@@ -8,141 +8,141 @@ msgstr ""
 "Project-Id-Version: Diaps Editing Toolbag plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-19 18:25-0400\n"
-"PO-Revision-Date: 2017-05-22 20:07+0200\n"
+"PO-Revision-Date: 2019-12-19 11:24-0500\n"
 "Last-Translator: Terisa de morgan <terisam@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0\n"
+"X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: dialogs.py:69
+#: dialogs.py:78
 msgid "Edit Spans & Divs"
 msgstr "Editar Spans & Divs"
 
-#: dialogs.py:72
+#: dialogs.py:81
 msgid "Delete"
 msgstr "Borrar"
 
-#: dialogs.py:73
+#: dialogs.py:82
 msgid "Modify"
 msgstr "Modificar"
 
-#: dialogs.py:74
+#: dialogs.py:83
 msgid "No attributes (\"naked\" tag)"
 msgstr "Sin atributos (etiqueta \"desnuda\")"
 
-#: dialogs.py:75
+#: dialogs.py:84
 msgid "No change"
 msgstr "Sin cambios"
 
-#: dialogs.py:91
+#: dialogs.py:100
 msgid "Action type:"
 msgstr "Tipo de acción:"
 
-#: dialogs.py:100
+#: dialogs.py:109
 msgid "Tag name:"
 msgstr "Nombre de etiqueta:"
 
-#: dialogs.py:109
+#: dialogs.py:118
 msgid "Having the attribute:"
 msgstr "Con el atributo:"
 
-#: dialogs.py:119
+#: dialogs.py:127
 msgid "Whose value is (no quotes):"
 msgstr "Cuyo valor es (sin comillas):"
 
-#: dialogs.py:123
+#: dialogs.py:136
 msgid "Regex"
 msgstr "Expresión regular"
 
-#: dialogs.py:128
+#: dialogs.py:145
 msgid "Change tag to:"
 msgstr "Cambiar etiqueta a:"
 
-#: dialogs.py:141
+#: dialogs.py:150
 msgid "New attribute string to insert (entire):"
 msgstr "Nueva cadena de atributo para insertar (completa):"
 
-#: dialogs.py:145
+#: dialogs.py:154
 msgid "Copy existing attribute string"
 msgstr "Copiar la cadena existente del atributo"
 
-#: dialogs.py:204 dialogs.py:214 dialogs.py:351
+#: dialogs.py:213 dialogs.py:223 dialogs.py:360
 msgid "Error"
 msgstr "Error"
 
-#: dialogs.py:205
+#: dialogs.py:214
 msgid "Must enter a value for the attribute selected"
 msgstr "Se debe introducir un valor para el atributo seleccionado"
 
-#: dialogs.py:215
+#: dialogs.py:224
 msgid "What--exactly--would that achieve?"
 msgstr "¿Qué lograría eso --exactamente--?"
 
-#: dialogs.py:247 main.py:185
+#: dialogs.py:256 main.py:185
 msgid "Smarten Punctuation (the sequel)"
 msgstr "Arreglar Puntuación (la secuela)"
 
-#: dialogs.py:262
+#: dialogs.py:271
 msgid "Smarten Quotation marks"
 msgstr "Arreglar Comillas"
 
-#: dialogs.py:271
+#: dialogs.py:280
 msgid "Use custom apostrophe exceptions file"
 msgstr "Usar archivo personalizado de excepciones de apóstrofes"
 
-#: dialogs.py:296
+#: dialogs.py:305
 msgid "(em|en)-dash settings"
 msgstr "opciones de guiones largos y cortos"
 
-#: dialogs.py:300
+#: dialogs.py:309
 msgid "Do not educate dashes"
 msgstr "No enseñar guiones"
 
-#: dialogs.py:300
+#: dialogs.py:309
 msgid "-- = emdash (no endash support)"
 msgstr "-- = guión largo (guión corto no soportado)"
 
-#: dialogs.py:301
+#: dialogs.py:310
 msgid "-- = emdash | --- = endash"
 msgstr "-- = guión largo | --- = guión corto"
 
-#: dialogs.py:301
+#: dialogs.py:311
 msgid "--- = emdash | -- = endash"
 msgstr "--- = guión largo | -- = guión corto"
 
-#: dialogs.py:306
+#: dialogs.py:315
 msgid "Smarten ellipses"
 msgstr "Arreglar elipsis"
 
-#: dialogs.py:310
+#: dialogs.py:319
 msgid "Educate with unicode characters (instead of entities)"
 msgstr "Enseñar con caracteres unicode (en lugar de entidades)"
 
-#: dialogs.py:322
+#: dialogs.py:331
 msgid "Select custom apostrophe exceptions file"
 msgstr "Seleccionar el archivo de excepciones de apóstrofes personalizados"
 
-#: dialogs.py:352
+#: dialogs.py:361
 msgid "Must select a custom exception file"
 msgstr "Debe seleccionar un archivo de excepciones personalizados"
 
-#: dialogs.py:448
+#: dialogs.py:457
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: dialogs.py:489
+#: dialogs.py:501
 msgid "Changed Files"
 msgstr "Archivos cambiados"
 
-#: dialogs.py:507
+#: dialogs.py:519
 msgid "See what changed"
 msgstr "Ver qué ha cambiado"
 
-#: dialogs.py:508
+#: dialogs.py:520
 msgid "Close"
 msgstr "Cerrar"
 
@@ -261,11 +261,11 @@ msgstr "No se ha convertido nada"
 msgid "No CM dimensions were found to convert."
 msgstr "No se han encontrado dimensiones CM que convertir."
 
-#: span_div_config.py:41
+#: span_div_config.py:51
 msgid "Edit Spans & Divs Customization"
 msgstr "Configuración de Editar Spans & Divs"
 
-#: span_div_config.py:73
+#: span_div_config.py:83
 msgid ""
 "Comma separated list of html elements (no quotes, no angle \"&lt;\" "
 "brackets)."
@@ -273,31 +273,31 @@ msgstr ""
 "Lista separada por comas de elementos html (sin comillas ni corchetes \"&lt;"
 "\" )."
 
-#: span_div_config.py:81
+#: span_div_config.py:91
 msgid "<b>Choices to change \"{}\" elements to:</b>"
 msgstr "<b>Los elementos \"{}\" se pueden cambiar a:</b>"
 
-#: span_div_config.py:97
+#: span_div_config.py:107
 msgid "<b>HTML attributes available to search for:</b>"
 msgstr "<b>Atributos HTML disponibles por los que buscar:</b>"
 
-#: span_div_config.py:100
+#: span_div_config.py:110
 msgid "Comma separated list of html attribute names (no quotes)."
 msgstr "Lista separada por comas de nombres de atributos html (sin comillas)."
 
-#: span_div_config.py:108
+#: span_div_config.py:118
 msgid "Reset all defaults"
 msgstr "Resetear todos los valores por defecto"
 
-#: span_div_config.py:109
+#: span_div_config.py:119
 msgid "Reset all settings to original defaults."
 msgstr "Resetar todas las opciones a sus valores originales."
 
-#: span_div_config.py:132
+#: span_div_config.py:142
 msgid "Are you sure?"
 msgstr "¿Estás seguro?"
 
-#: span_div_config.py:133
+#: span_div_config.py:143
 msgid "Reset all customizable options to their original defaults?"
 msgstr ""
 "¿Reseteo todas las opciones configurables a sus valores originales por "
