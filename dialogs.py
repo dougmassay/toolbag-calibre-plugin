@@ -470,16 +470,19 @@ class ShowProgressDialog(QProgressDialog):
             return self.do_close()
         name = self.file_list[self.i]
         data = self.container.raw_data(name)
-        orig_hash = md5(data).digest()
+        #if is_py3:
+        #    data = bytes(data.encode('utf-8'))
+        #orig_hash = md5(data).digest()
         self.i += 1
 
         self.setLabelText('{0}: {1}'.format(self.action_type, name))
         # Send the necessary data to the callback function in main.py.
         print('Processing {0}'.format(name))
         htmlstr = self.callback_fn(data, self.criteria)
-        new_hash = md5(htmlstr).digest()
-        if new_hash != orig_hash:
-            self.container.open(name, 'wb').write(htmlstr)
+        #new_hash = md5(htmlstr).digest()
+        #if new_hash != orig_hash:
+        if htmlstr != data:
+            self.container.open(name, 'w').write(htmlstr)
             self.changed_files.append(name)
             self.clean = False
 

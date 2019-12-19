@@ -8,6 +8,10 @@ __docformat__ = 'restructuredtext en'
 
 import sys
 is_py3 = sys.version_info[0] == 3
+if is_py3:
+    myunichr = chr
+else:
+    myunichr = unichr
 
 def unescape(text):
     import re
@@ -29,9 +33,9 @@ def unescape(text):
             # character reference
             try:
                 if text[:3] == '&#x':
-                    return unichr(int(text[3:-1], 16))
+                    return myunichr(int(text[3:-1], 16))
                 else:
-                    return unichr(int(text[2:-1]))
+                    return myunichr(int(text[2:-1]))
             except ValueError:
                 print('Value Error')
                 pass
@@ -46,7 +50,7 @@ def unescape(text):
                 elif text[1:-1] == 'lt':
                     text = '&amp;lt;'
                 else:
-                    text = unichr(name2codepoint[text[1:-1]])
+                    text = myunichr(name2codepoint[text[1:-1]])
             except KeyError:
                 print('KeyError')
                 pass
