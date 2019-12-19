@@ -71,7 +71,7 @@ class ConfigWidget(Dialog):
         # Create an integer-indexed dictionary of QVBoxLayouts representing the number of
         # columns necessary. Added left to right in the parent QHBoxLayout.
         column = {}
-        for i in xrange(1, num_cols+1):
+        for i in range(1, num_cols+1):
             column[i] = QVBoxLayout()
             column[i].setAlignment(Qt.AlignLeft)
             columns_frame.addLayout(column[i])
@@ -131,11 +131,11 @@ class ConfigWidget(Dialog):
         for tag in TAGLIST:
             tmp_list = text_type(self.qlinedit_widgets[tag].displayText()).split(',')
             tmp_list = [x.strip(' ') for x in tmp_list]
-            plugin_prefs['{}_changes'.format(tag)] = filter(None, tmp_list)
+            plugin_prefs['{}_changes'.format(tag)] = list(filter(None, tmp_list))
 
         tmp_list = text_type(self.attrs_txtBox.displayText()).split(',')
         tmp_list = [x.strip(' ') for x in tmp_list]
-        plugin_prefs['attrs'] = filter(None, tmp_list)
+        plugin_prefs['attrs'] = list(filter(None, tmp_list))
         self.accept()
 
     def reset_defaults(self):
