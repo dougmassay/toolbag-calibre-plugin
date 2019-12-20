@@ -77,12 +77,13 @@ def zipUpDir(myzip, tdir, localname):
     dir_contents = os.listdir(currentdir)
     for entry in dir_contents:
         afilename = entry
-        localfilePath = os.path.join(localname, afilename)
-        realfilePath = os.path.join(currentdir, entry)
-        if os.path.isfile(realfilePath):
-            myzip.write(realfilePath, localfilePath, zipfile.ZIP_DEFLATED)
-        elif os.path.isdir(realfilePath):
-            zipUpDir(myzip, tdir, localfilePath)
+        if afilename.rpartition('.')[-1] not in ('mo', 'pot'):
+            localfilePath = os.path.join(localname, afilename)
+            realfilePath = os.path.join(currentdir, entry)
+            if os.path.isfile(realfilePath):
+                myzip.write(realfilePath, localfilePath, zipfile.ZIP_DEFLATED)
+            elif os.path.isdir(realfilePath):
+                zipUpDir(myzip, tdir, localfilePath)
 
 def removePreviousZip():
     print('Removing any leftover zip files ...')
