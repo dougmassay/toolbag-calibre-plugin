@@ -387,7 +387,7 @@ class CSScm2em(Tool):
             sheet = container.parsed(name)
             cssparse(sheet)
         else:
-            for name, mt in container.mime_map.iteritems():
+            for name, mt in container.mime_map.items():
                 if mt in OEB_STYLES:
                     sheet = container.parsed(name)
                     cssparse(sheet)
