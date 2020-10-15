@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Diaps Editing Toolbag plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-19 18:25-0400\n"
+"POT-Creation-Date: 2020-10-15 10:41-0400\n"
 "PO-Revision-Date: 2019-12-19 11:24-0500\n"
 "Last-Translator: Terisa de morgan <terisam@gmail.com>\n"
 "Language-Team: \n"
@@ -50,15 +50,15 @@ msgstr "Nombre de etiqueta:"
 msgid "Having the attribute:"
 msgstr "Con el atributo:"
 
-#: dialogs.py:127
+#: dialogs.py:128
 msgid "Whose value is (no quotes):"
 msgstr "Cuyo valor es (sin comillas):"
 
-#: dialogs.py:136
+#: dialogs.py:132
 msgid "Regex"
 msgstr "Expresión regular"
 
-#: dialogs.py:145
+#: dialogs.py:137
 msgid "Change tag to:"
 msgstr "Cambiar etiqueta a:"
 
@@ -110,7 +110,7 @@ msgstr "-- = guión largo (guión corto no soportado)"
 msgid "-- = emdash | --- = endash"
 msgstr "-- = guión largo | --- = guión corto"
 
-#: dialogs.py:311
+#: dialogs.py:310
 msgid "--- = emdash | -- = endash"
 msgstr "--- = guión largo | -- = guión corto"
 

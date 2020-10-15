@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Diaps Editing Toolbag plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-19 18:25-0400\n"
+"POT-Creation-Date: 2020-10-15 10:41-0400\n"
 "PO-Revision-Date: 2019-12-19 11:27-0500\n"
 "Last-Translator: Nicolas F.\n"
 "Language-Team: \n"
@@ -55,15 +55,15 @@ msgstr "Nom de la balise :"
 msgid "Having the attribute:"
 msgstr "Ayant l'attribut :"
 
-#: dialogs.py:127
+#: dialogs.py:128
 msgid "Whose value is (no quotes):"
 msgstr "Dont la valeur est (sans guillemets) :"
 
-#: dialogs.py:136
+#: dialogs.py:132
 msgid "Regex"
 msgstr "Regex"
 
-#: dialogs.py:145
+#: dialogs.py:137
 msgid "Change tag to:"
 msgstr "Remplacer la balise par :"
 
@@ -115,7 +115,7 @@ msgstr "-- = tiret cadratin (—) (Aucun support des demi-cadratin (–))"
 msgid "-- = emdash | --- = endash"
 msgstr "-- = tiret cadratin (—) | --- = tiret demi-cadratin (–)"
 
-#: dialogs.py:311
+#: dialogs.py:310
 msgid "--- = emdash | -- = endash"
 msgstr "--- = tiret cadratin (—) | -- = tiret demi-cadratin (–)"
 

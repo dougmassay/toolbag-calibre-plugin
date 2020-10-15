@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Diaps Editing Toolbag plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-19 18:25-0400\n"
+"POT-Creation-Date: 2020-10-15 10:41-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,15 +55,15 @@ msgstr ""
 msgid "Having the attribute:"
 msgstr ""
 
-#: dialogs.py:127
+#: dialogs.py:128
 msgid "Whose value is (no quotes):"
 msgstr ""
 
-#: dialogs.py:136
+#: dialogs.py:132
 msgid "Regex"
 msgstr ""
 
-#: dialogs.py:145
+#: dialogs.py:137
 msgid "Change tag to:"
 msgstr ""
 
@@ -115,7 +115,7 @@ msgstr ""
 msgid "-- = emdash | --- = endash"
 msgstr ""
 
-#: dialogs.py:311
+#: dialogs.py:310
 msgid "--- = emdash | -- = endash"
 msgstr ""
 
