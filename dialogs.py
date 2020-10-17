@@ -15,8 +15,8 @@ if is_py3:
     text_type = str
     binary_type = bytes
 else:
-    range = xrange
-    text_type = unicode
+    range = xrange  # noqa
+    text_type = unicode  # noqa
     binary_type = str
 
 try:
@@ -357,8 +357,8 @@ class PunctDialog(Dialog):
         self.file_path.setReadOnly(False)
         if self.use_file.isChecked() and not len(self.file_path.displayText()):
             self.file_path.setReadOnly(True)
-            return error_dialog(self.parent, _('Error'), '<p>' +
-                    _('Must select a custom exception file'), det_msg='', show=True)
+            return error_dialog(self.parent, _('Error'),
+                    '<p>' + _('Must select a custom exception file'), det_msg='', show=True)
         if self.use_file.isChecked():
             apos_exception_file = text_type(self.file_path.displayText())
             if not os.path.exists(apos_exception_file):
@@ -443,7 +443,7 @@ class PunctDialog(Dialog):
                 words_list = [line.rstrip() for line in fd]
             words_list = filter(None, words_list)
             print('Exceptions list:', words_list)
-        except:
+        except Exception:
             pass
         return words_list
 
@@ -470,17 +470,17 @@ class ShowProgressDialog(QProgressDialog):
             return self.do_close()
         name = self.file_list[self.i]
         data = self.container.raw_data(name)
-        #if is_py3:
+        # if is_py3:
         #    data = bytes(data.encode('utf-8'))
-        #orig_hash = md5(data).digest()
+        # orig_hash = md5(data).digest()
         self.i += 1
 
         self.setLabelText('{0}: {1}'.format(self.action_type, name))
         # Send the necessary data to the callback function in main.py.
         print('Processing {0}'.format(name))
         htmlstr = self.callback_fn(data, self.criteria)
-        #new_hash = md5(htmlstr).digest()
-        #if new_hash != orig_hash:
+        # new_hash = md5(htmlstr).digest()
+        # if new_hash != orig_hash:
         if htmlstr != data:
             self.container.open(name, 'w').write(htmlstr)
             self.changed_files.append(name)
@@ -516,8 +516,8 @@ class ResultsDialog(Dialog):
         button_box = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
         button_box = QDialogButtonBox()
 
-        ok_button = button_box.addButton(_("See what changed"), QDialogButtonBox.AcceptRole)
-        cancel_button = button_box.addButton(_("Close"), QDialogButtonBox.RejectRole)
+        button_box.addButton(_("See what changed"), QDialogButtonBox.AcceptRole)
+        button_box.addButton(_("Close"), QDialogButtonBox.RejectRole)
         button_box.accepted.connect(self.accept)
         button_box.rejected.connect(self.reject)
         layout.addWidget(button_box)

@@ -8,7 +8,7 @@ __docformat__ = 'restructuredtext en'
 
 try:
     from PyQt5.Qt import QAction, QMenu, QDialog, QIcon, QPixmap
-except:
+except ImportError:
     from PyQt4.Qt import QAction, QMenu, QDialog, QIcon, QPixmap
 
 import os
@@ -38,7 +38,7 @@ def get_icon(icon_name):
         pixmap.load(icon_path)
         return QIcon(pixmap)
     # As we did not find an icon elsewhere, look within our zip resources
-    return get_icons(icon_name)
+    return get_icons(icon_name)  # noqa
 
 
 # pulls in translation files for _() strings
@@ -76,7 +76,7 @@ class SpanDivEdit(Tool):
             checked_menu_item.setCheckable(True)
             checked_menu_item.setChecked(self.parse_current)
             menu.addSeparator()
-            config_menu_item = menu.addAction(_('Customize'), self.show_configuration)
+            menu.addAction(_('Customize'), self.show_configuration)
         ac.triggered.connect(self.dispatcher)
         return ac
 
@@ -259,9 +259,9 @@ class SmarterPunct(Tool):
         else:
             from calibre_plugins.diaps_toolbag.dialogs import ShowProgressDialog
             d = ShowProgressDialog(self.gui, container, OEB_DOCS, criteria, self.smarten, _('Smartening'))
-            cancelled_msg = ''
+            cancelled_msg = ''  # noqa
             if d.wasCanceled():
-                cancelled_msg = ' (cancelled)'
+                cancelled_msg = ' (cancelled)'  # noqa
             self.cleanasawhistle = d.clean
             self.changed_files.extend(d.changed_files)
 

@@ -26,8 +26,8 @@ if is_py3:
     text_type = str
     binary_type = bytes
 else:
-    range = xrange
-    text_type = unicode
+    range = xrange  # noqa
+    text_type = unicode  # noqa
     binary_type = str
 
 # pulls in translation files for _() strings

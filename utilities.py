@@ -11,7 +11,7 @@ is_py3 = sys.version_info[0] == 3
 if is_py3:
     myunichr = chr
 else:
-    myunichr = unichr
+    myunichr = unichr  # noqa
 
 def unescape(text):
     import re
@@ -55,4 +55,4 @@ def unescape(text):
                 print('KeyError')
                 pass
         return text  # leave as is
-    return re.sub("&#?\w+;", fixup, text)
+    return re.sub(r"""&#?\w+;""", fixup, text)
