@@ -22,6 +22,7 @@ init:
 before_build:
 - sh: |-
     sudo apt-get update && apt-get install -y
+    "source ${HOME}/venv3.8/bin/activate"
     pip3 install flake8
     pip3 install poedit
 
