@@ -77,7 +77,7 @@ def zipUpDir(myzip, tdir, localname):
     dir_contents = os.listdir(currentdir)
     for entry in dir_contents:
         afilename = entry
-        if afilename.rpartition('.')[-1] not in ('mo', 'pot'):
+        if afilename.rpartition('.')[-1] not in ('mo', 'pot', 'po~'):
             localfilePath = os.path.join(localname, afilename)
             realfilePath = os.path.join(currentdir, entry)
             if os.path.isfile(realfilePath):
