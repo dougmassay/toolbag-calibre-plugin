@@ -10,7 +10,7 @@ msgmerge -NU --backup=none ./translations/Trad.pot messages.pot
 for i in ./translations/*.po; do
     [ -f "$i" ] || break
     msgmerge -NU --backup=none "$i" messages.pot
-    mo_name = name=$(echo "$i" | cut -f 1 -d '.')
+    mo_name=$(echo "$i" | cut -f 1 -d '.')
     msgfmt -o "$mo_name.mo" "$i"
 done
 #msgmerge -NU ./translations/fr.po messages.pot
