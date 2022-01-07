@@ -13,5 +13,7 @@ for i in ./translations/*.po; do
 done
 #msgmerge -NU ./translations/fr.po messages.pot
 #msgmerge -NU ./translations/es.po messages.pot
+msgfmt -o ./translations/fr.mo ./translations/fr.po
+msgfmt -o ./translations/es.mo ./translations/es.po
 
 rm ./messages.pot
