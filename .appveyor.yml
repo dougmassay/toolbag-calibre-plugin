@@ -28,7 +28,7 @@ before_build:
     
 build_script:
 - sh: |-
-    ./trans.sh
+    bash ./trans.sh
     python3 setup.py
  
 test_script:

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Create new translation strings messages.po file:
 
@@ -9,13 +9,11 @@ find . -type f -name "*.py" | xgettext --output=messages.pot -f -
 msgmerge -NU --backup=none ./translations/Trad.pot messages.pot
 for i in ./translations/*.po; do
     [ -f "$i" ] || break
+    echo "$i"
     msgmerge -NU --backup=none "$i" messages.pot
     mo_name=${i::-3}
+    echo "$mo_name"
     msgfmt -o "$mo_name.mo" "$i"
 done
-#msgmerge -NU ./translations/fr.po messages.pot
-#msgmerge -NU ./translations/es.po messages.pot
-#msgfmt -o ./translations/fr.mo ./translations/fr.po
-#msgfmt -o ./translations/es.mo ./translations/es.po
 
 rm ./messages.pot
