@@ -18,15 +18,19 @@ else:
     range = xrange  # noqa
     text_type = unicode  # noqa
     binary_type = str
-
 try:
-    from PyQt5.Qt import (Qt, QVBoxLayout, QLabel, QCheckBox, QLineEdit, QTextEdit, QComboBox, QApplication,
-                      QSizePolicy, QGroupBox, QPushButton, QDialogButtonBox, QHBoxLayout, QTextBrowser,
-                      QSpacerItem, QProgressDialog, QListWidget, QTimer, QSize, QDialog, QIcon, QUrl)
+    from qt.core import (Qt, QVBoxLayout, QLabel, QCheckBox, QLineEdit, QTextEdit, QComboBox, QApplication,
+                    QSizePolicy, QGroupBox, QPushButton, QDialogButtonBox, QHBoxLayout, QTextBrowser,
+                    QSpacerItem, QProgressDialog, QListWidget, QTimer, QSize, QDialog, QIcon, QUrl)
 except ImportError:
-    from PyQt4.Qt import (Qt, QVBoxLayout, QLabel, QCheckBox, QLineEdit, QTextEdit, QComboBox, QApplication,
-                      QSizePolicy, QGroupBox, QPushButton, QDialogButtonBox, QHBoxLayout, QTextBrowser,
-                      QSpacerItem, QProgressDialog, QListWidget, QTimer, QSize, QDialog, QIcon, QUrl)
+    try:
+        from PyQt5.Qt import (Qt, QVBoxLayout, QLabel, QCheckBox, QLineEdit, QTextEdit, QComboBox, QApplication,
+                        QSizePolicy, QGroupBox, QPushButton, QDialogButtonBox, QHBoxLayout, QTextBrowser,
+                        QSpacerItem, QProgressDialog, QListWidget, QTimer, QSize, QDialog, QIcon, QUrl)
+    except ImportError:
+        from PyQt4.Qt import (Qt, QVBoxLayout, QLabel, QCheckBox, QLineEdit, QTextEdit, QComboBox, QApplication,
+                        QSizePolicy, QGroupBox, QPushButton, QDialogButtonBox, QHBoxLayout, QTextBrowser,
+                        QSpacerItem, QProgressDialog, QListWidget, QTimer, QSize, QDialog, QIcon, QUrl)
 
 from calibre.gui2 import error_dialog, choose_files, open_url
 from calibre.utils.config import config_dir

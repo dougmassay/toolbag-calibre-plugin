@@ -8,10 +8,14 @@ __docformat__ = 'restructuredtext en'
 
 import os
 import math
+
 try:
-    from PyQt5.Qt import (Qt, QLabel, QLineEdit, QGroupBox, QVBoxLayout, QHBoxLayout, QPushButton, QDialogButtonBox)
+    from qt.core import (Qt, QLabel, QLineEdit, QGroupBox, QVBoxLayout, QHBoxLayout, QPushButton, QDialogButtonBox)
 except ImportError:
-    from PyQt4.Qt import (Qt, QLabel, QLineEdit, QGroupBox, QVBoxLayout, QHBoxLayout, QPushButton, QDialogButtonBox)
+    try:
+        from PyQt5.Qt import (Qt, QLabel, QLineEdit, QGroupBox, QVBoxLayout, QHBoxLayout, QPushButton, QDialogButtonBox)
+    except ImportError:
+        from PyQt4.Qt import (Qt, QLabel, QLineEdit, QGroupBox, QVBoxLayout, QHBoxLayout, QPushButton, QDialogButtonBox)
 
 from calibre.utils.config import JSONConfig
 from calibre.gui2 import question_dialog

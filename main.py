@@ -7,9 +7,12 @@ __license__   = 'GPL v3'
 __docformat__ = 'restructuredtext en'
 
 try:
-    from PyQt5.Qt import QAction, QMenu, QDialog, QIcon, QPixmap
+    from qt.core import QAction, QMenu, QDialog, QIcon, QPixmap
 except ImportError:
-    from PyQt4.Qt import QAction, QMenu, QDialog, QIcon, QPixmap
+    try:
+        from PyQt5.Qt import QAction, QMenu, QDialog, QIcon, QPixmap
+    except ImportError:
+        from PyQt4.Qt import QAction, QMenu, QDialog, QIcon, QPixmap
 
 import os
 
