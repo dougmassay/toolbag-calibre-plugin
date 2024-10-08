@@ -41,11 +41,11 @@ msgstr "<b>Choix pour remplacer la balise \"{}\" :</ b>"
 
 #: span_div_config.py:114
 msgid "<b>Tags available to search for:</b>"
-msgstr ""
+msgstr "<b>Balises disponibles à rechercher:"
 
 #: span_div_config.py:117
 msgid "Comma separated list of html tag names (no quotes)."
-msgstr ""
+msgstr "Liste de noms de balises HTML séparés par des virgules (sans guillemets)"
 
 #: span_div_config.py:121
 msgid "<b>HTML attributes available to search for:</b>"
