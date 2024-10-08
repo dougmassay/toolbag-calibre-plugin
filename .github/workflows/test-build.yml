@@ -1,0 +1,88 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Test build and release Diaps Editing Toolbag plugin
+
+on:
+  push:
+    tags:
+      - 'v*'
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+env:
+  PLUGIN_NAME: "Diaps Editing Toolbag"
+
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Get tag name
+      if: startswith( github.ref, 'refs/tags/')
+      id: get_tag_name
+      run: echo "TAGNAME=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_OUTPUT
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get install -y poedit
+        python -m pip install --upgrade pip
+        pip install flake8
+
+    - name: Update language files
+      run: |
+        bash ./trans.sh
+
+    - name: Lint with flake8
+      run: |
+        flake8 .
+  
+    - name: Build Plugin
+      run: |
+        python setup.py
+  
+    - name: Upload Artifact
+      if: "contains(github.event.head_commit.message, '[deploy]')"
+      uses: actions/upload-artifact@v4
+      with:
+        name: toolbag-artifact
+        path: ./*.zip
+        retention-days: 12
+
+    - name: Remove mo language files
+      run: |
+        rm -f ./translations/*.mo
+
+    - name: Commit any language files updated
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_user_name: GitHub Actions Bot
+        commit_user_email: actions-bot@example.org
+        commit_author: Doug Massay <dougmassay@users.noreply.github.com>
+        commit_message: Update modified po files
+
+    - name: Create Release
+      if: startswith( github.ref, 'refs/tags/')
+      uses: ncipollo/release-action@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        name: ${{ env.PLUGIN_NAME }} ${{ steps.get_tag_name.outputs.TAGNAME }}
+        body: |
+          Changes in this Release
+          - First Change
+          - Second Change
+        draft: true
+        prerelease: false
+        artifacts: './*.zip'
