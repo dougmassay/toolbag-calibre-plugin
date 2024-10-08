@@ -110,12 +110,14 @@ class ConfigWidget(Dialog):
         attrs_layout = QVBoxLayout()
         attrs_layout.setAlignment(Qt.AlignCenter)
         layout.addLayout(attrs_layout)
+
         labeltags = QLabel(_('<b>Tags available to search for:</b>'), self)
         labeltags.setAlignment(Qt.AlignCenter)
         self.tags_txtBox = QLineEdit(', '.join(plugin_prefs['taglist']), self)
         self.tags_txtBox.setToolTip('<p>{}'.format(_('Comma separated list of html tag names (no quotes).')))
         attrs_layout.addWidget(labeltags)
         attrs_layout.addWidget(self.tags_txtBox)
+
         labelattrs = QLabel(_('<b>HTML attributes available to search for:</b>'), self)
         labelattrs.setAlignment(Qt.AlignCenter)
         self.attrs_txtBox = QLineEdit(', '.join(plugin_prefs['attrs']), self)
