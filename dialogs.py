@@ -78,7 +78,7 @@ class RemoveDialog(Dialog):
         self.prefs = prefs
         self.parent = parent
         self.help_file_name = '{0}_span_div_help.html'.format(PLUGIN_SAFE_NAME)
-        self.taglist = TAGLIST
+        self.taglist = self.prefs['taglist']
         Dialog.__init__(self, _('Edit Spans & Divs'), 'toolbag_spans_divs_dialog', parent)
 
     def setup_ui(self):

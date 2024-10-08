@@ -47,11 +47,13 @@ plugin_prefs = JSONConfig('plugins/{0}_SpanDivEdit_settings'.format(PLUGIN_SAFE_
 for tag in TAGLIST:
     plugin_prefs.defaults['{}_changes'.format(tag)] = CHANGE_TO_MAP[tag]
 plugin_prefs.defaults['attrs'] = ATTRS_LIST
+plugin_prefs.defaults['taglist'] = TAGLIST
 
 class ConfigWidget(Dialog):
     def __init__(self, gui):
         self.gui = gui
         self.qlinedit_widgets = {}
+        self.taglist = plugin_prefs['taglist']
         Dialog.__init__(self, _('Edit Spans & Divs Customization'), '{}plugin:spandiv_config'.format(PLUGIN_SAFE_NAME), gui)
 
     def setup_ui(self):
@@ -63,12 +65,12 @@ class ConfigWidget(Dialog):
         # How many columns of nine items each will it take to display
         # a text box for each tag in taglist?
         col_limit = 9
-        num_cols = len(TAGLIST)/col_limit
+        num_cols = len(self.taglist)/col_limit
         num_cols = int(math.ceil(num_cols))
 
         # If the column limit and the number of columns produces a single
         # orphan text entry widget, reduce the column limit accordingly.
-        if num_cols > 1 and (len(TAGLIST) - ((num_cols - 1)*col_limit)) < 2:
+        if num_cols > 1 and (len(self.taglist) - ((num_cols - 1)*col_limit)) < 2:
             if num_cols >= 3:
                 col_limit -= 1
 
@@ -85,7 +87,7 @@ class ConfigWidget(Dialog):
         curr_col = 1
         curr_item = 1
         tooltip = _('Comma separated list of html elements (no quotes, no angle "&lt;" brackets).')
-        for tag in TAGLIST:
+        for tag in self.taglist:
             # Column item limit surpassed - switch to next column.
             if curr_item > col_limit:
                 column[curr_col].addStretch()
@@ -99,8 +101,8 @@ class ConfigWidget(Dialog):
             column[curr_col].addWidget(label)
             column[curr_col].addWidget(self.qlinedit_widgets[tag])
 
-            if not len(CHANGE_TO_MAP[tag]):
-                self.qlinedit_widgets[tag].setDisabled(True)
+            #if not len(plugin_prefs['{}_changes'.format(tag)]):
+            #    self.qlinedit_widgets[tag].setDisabled(True)
             curr_item += 1
         column[curr_col].addStretch()
 
@@ -108,11 +110,17 @@ class ConfigWidget(Dialog):
         attrs_layout = QVBoxLayout()
         attrs_layout.setAlignment(Qt.AlignCenter)
         layout.addLayout(attrs_layout)
-        label = QLabel(_('<b>HTML attributes available to search for:</b>'), self)
-        label.setAlignment(Qt.AlignCenter)
+        labeltags = QLabel(_('<b>Tags available to search for:</b>'), self)
+        labeltags.setAlignment(Qt.AlignCenter)
+        self.tags_txtBox = QLineEdit(', '.join(plugin_prefs['taglist']), self)
+        self.tags_txtBox.setToolTip('<p>{}'.format(_('Comma separated list of html tag names (no quotes).')))
+        attrs_layout.addWidget(labeltags)
+        attrs_layout.addWidget(self.tags_txtBox)
+        labelattrs = QLabel(_('<b>HTML attributes available to search for:</b>'), self)
+        labelattrs.setAlignment(Qt.AlignCenter)
         self.attrs_txtBox = QLineEdit(', '.join(plugin_prefs['attrs']), self)
         self.attrs_txtBox.setToolTip('<p>{}'.format(_('Comma separated list of html attribute names (no quotes).')))
-        attrs_layout.addWidget(label)
+        attrs_layout.addWidget(labelattrs)
         attrs_layout.addWidget(self.attrs_txtBox)
 
         layout.addSpacing(10)
@@ -132,7 +140,7 @@ class ConfigWidget(Dialog):
 
     def save_settings(self):
         # Save current dialog sttings back to JSON config file
-        for tag in TAGLIST:
+        for tag in self.taglist:
             tmp_list = text_type(self.qlinedit_widgets[tag].displayText()).split(',')
             tmp_list = [x.strip(' ') for x in tmp_list]
             plugin_prefs['{}_changes'.format(tag)] = list(filter(None, tmp_list))
@@ -140,6 +148,9 @@ class ConfigWidget(Dialog):
         tmp_list = text_type(self.attrs_txtBox.displayText()).split(',')
         tmp_list = [x.strip(' ') for x in tmp_list]
         plugin_prefs['attrs'] = list(filter(None, tmp_list))
+        tmp_list = text_type(self.tags_txtBox.displayText()).split(',')
+        tmp_list = [x.strip(' ') for x in tmp_list]
+        plugin_prefs['taglist']= list(filter(None, tmp_list))
         self.accept()
 
     def reset_defaults(self):
@@ -150,4 +161,5 @@ class ConfigWidget(Dialog):
             for tag in TAGLIST:
                 plugin_prefs['{}_changes'.format(tag)] = CHANGE_TO_MAP[tag]
             plugin_prefs['attrs'] = ATTRS_LIST
+            plugin_prefs['taglist'] = TAGLIST
             self.accept()
