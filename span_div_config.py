@@ -101,7 +101,7 @@ class ConfigWidget(Dialog):
             column[curr_col].addWidget(label)
             column[curr_col].addWidget(self.qlinedit_widgets[tag])
 
-            #if not len(plugin_prefs['{}_changes'.format(tag)]):
+            # if not len(plugin_prefs['{}_changes'.format(tag)]):
             #    self.qlinedit_widgets[tag].setDisabled(True)
             curr_item += 1
         column[curr_col].addStretch()
