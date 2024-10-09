@@ -62,9 +62,9 @@ class ConfigWidget(Dialog):
         columns_frame = QHBoxLayout()
         layout.addLayout(columns_frame)
 
-        # How many columns of nine items each will it take to display
+        # How many columns of eight items each will it take to display
         # a text box for each tag in taglist?
-        col_limit = 9
+        col_limit = 8
         num_cols = len(self.taglist)/col_limit
         num_cols = int(math.ceil(num_cols))
 
