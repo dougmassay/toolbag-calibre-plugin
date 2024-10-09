@@ -2,7 +2,7 @@
 
 # Create new translation strings messages.po file:
 
-find . -type f -name "*.py" | xgettext --output=messages.pot -F -
+find . -type f -name "*.py" | xgettext --output=messages.pot -F -f -
 
 # Merge (update) with existing template and finsished translations files
 
