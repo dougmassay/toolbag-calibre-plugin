@@ -18,6 +18,175 @@ msgstr ""
 "X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: span_div_config.py:57
+msgid "Edit Spans & Divs Customization"
+msgstr "Configuración de Editar Spans & Divs"
+
+#: span_div_config.py:89
+msgid ""
+"Comma separated list of html elements (no quotes, no angle \"&lt;\" "
+"brackets)."
+msgstr ""
+"Lista separada por comas de elementos html (sin comillas ni corchetes \"&lt;"
+"\" )."
+
+#: span_div_config.py:97
+msgid "<b>Choices to change \"{}\" elements to:</b>"
+msgstr "<b>Los elementos \"{}\" se pueden cambiar a:</b>"
+
+#: span_div_config.py:117
+msgid "<b>Tags available to search for:</b>"
+msgstr ""
+
+#: span_div_config.py:120
+msgid "Comma separated list of html tag names (no quotes)."
+msgstr ""
+
+#: span_div_config.py:124
+msgid "<b>HTML attributes available to search for:</b>"
+msgstr "<b>Atributos HTML disponibles por los que buscar:</b>"
+
+#: span_div_config.py:127
+msgid "Comma separated list of html attribute names (no quotes)."
+msgstr "Lista separada por comas de nombres de atributos html (sin comillas)."
+
+#: span_div_config.py:135
+msgid "Reset all defaults"
+msgstr "Resetear todos los valores por defecto"
+
+#: span_div_config.py:136
+msgid "Reset all settings to original defaults."
+msgstr "Resetar todas las opciones a sus valores originales."
+
+#: span_div_config.py:162
+msgid "Are you sure?"
+msgstr "¿Estás seguro?"
+
+#: span_div_config.py:163
+msgid "Reset all customizable options to their original defaults?"
+msgstr ""
+"¿Reseteo todas las opciones configurables a sus valores originales por "
+"defecto?"
+
+#: main.py:68
+msgid "Edit Spans && Divs"
+msgstr "Editar Spans && Divs"
+
+#: main.py:78
+msgid "Edit current file only"
+msgstr "Editar solo el archivo actual"
+
+#: main.py:82
+msgid "Customize"
+msgstr "Configurar"
+
+#: main.py:93 main.py:210 main.py:334
+msgid "No book open"
+msgstr "No hay libro abierto"
+
+#: main.py:94 main.py:211 main.py:335
+msgid "Need to have a book open first."
+msgstr "Necesitas abrir primero un libro."
+
+#: main.py:98 main.py:215 main.py:339
+msgid "Cannot Process"
+msgstr "No puede procesarlo"
+
+#: main.py:99 main.py:216
+msgid "No file open for editing or the current file is not an (x)html file."
+msgstr ""
+"No hay ning´ñun archivo abierto en edición o el archivo actual no es un "
+"archivo (x)html."
+
+#: main.py:111
+msgid "Before: Span Div Edit"
+msgstr "Antes de: Edición de Span y Div"
+
+#: main.py:118 main.py:234 main.py:353
+msgid "Failed"
+msgstr "Fallo"
+
+#: main.py:119
+msgid "Failed to process divs or spans, click \"Show details\" for more info"
+msgstr ""
+"Fallo al procesar divs o spans, pulsa \"Mostrar detalles\" para más "
+"información"
+
+#: main.py:134
+msgid "Nothing changed"
+msgstr "Nada ha cambiado"
+
+#: main.py:135
+msgid "Nothing matching your criteria was found."
+msgstr "No se ha encontrado nada que coincida con tu criterio"
+
+#: main.py:149
+msgid "Parsing"
+msgstr "Parseando"
+
+#: main.py:188 dialogs.py:260
+msgid "Smarten Punctuation (the sequel)"
+msgstr "Arreglar Puntuación (la secuela)"
+
+#: main.py:197
+msgid "Smarten current file only"
+msgstr "Arreglar solo el archivo actual"
+
+#: main.py:227
+msgid "Before: Smarten Punctuation"
+msgstr "Antes: Arreglar Puntuación"
+
+#: main.py:235
+msgid "Failed to smarten punctuation, click \"Show details\" for more info"
+msgstr ""
+"Fallo al arreglar la puntuación, pulsa \"Mostrar detalles\" para más "
+"información"
+
+#: main.py:250
+msgid "Nothing smartened"
+msgstr "No se ha arreglado nada"
+
+#: main.py:251
+msgid "No punctuation meeting your criteria was found to smarten."
+msgstr ""
+"No se ha encontrado ninguna puntuación que arreglar que cumpla con tu "
+"criterio."
+
+#: main.py:264
+msgid "Smartening"
+msgstr "Arreglando"
+
+#: main.py:312
+msgid "Convert CSS cm to em"
+msgstr "Convertir cm en CSS to em"
+
+#: main.py:321
+msgid "Convert current CSS file only"
+msgstr "Convertir solo el actual archivo CSS"
+
+#: main.py:340
+msgid "No file open for editing or the current file is not a CSS file."
+msgstr ""
+"No hay ning´ñun archivo abierto en edición o el archivo actual no es un "
+"archivo CSS."
+
+#: main.py:346
+msgid "Before: Convert CM to EM"
+msgstr "Antes de: Convertir CM a EM"
+
+#: main.py:354
+msgid "Failed to convert CMs to EMs, click \"Show details\" for more info"
+msgstr ""
+"Fallo al convertir CMs a EMs, pulsa \"Mostrar detalles\" para más información"
+
+#: main.py:369
+msgid "Nothing Converted"
+msgstr "No se ha convertido nada"
+
+#: main.py:370
+msgid "No CM dimensions were found to convert."
+msgstr "No se han encontrado dimensiones CM que convertir."
+
 #: dialogs.py:82
 msgid "Edit Spans & Divs"
 msgstr "Editar Spans & Divs"
@@ -82,10 +251,6 @@ msgstr "Se debe introducir un valor para el atributo seleccionado"
 msgid "What--exactly--would that achieve?"
 msgstr "¿Qué lograría eso --exactamente--?"
 
-#: dialogs.py:260 main.py:188
-msgid "Smarten Punctuation (the sequel)"
-msgstr "Arreglar Puntuación (la secuela)"
-
 #: dialogs.py:275
 msgid "Smarten Quotation marks"
 msgstr "Arreglar Comillas"
@@ -99,12 +264,12 @@ msgid "(em|en)-dash settings"
 msgstr "opciones de guiones largos y cortos"
 
 #: dialogs.py:313
-msgid "-- = emdash (no endash support)"
-msgstr "-- = guión largo (guión corto no soportado)"
-
-#: dialogs.py:313
 msgid "Do not educate dashes"
 msgstr "No enseñar guiones"
+
+#: dialogs.py:313
+msgid "-- = emdash (no endash support)"
+msgstr "-- = guión largo (guión corto no soportado)"
 
 #: dialogs.py:314
 msgid "-- = emdash | --- = endash"
@@ -145,168 +310,3 @@ msgstr "Ver qué ha cambiado"
 #: dialogs.py:524
 msgid "Close"
 msgstr "Cerrar"
-
-#: main.py:68
-msgid "Edit Spans && Divs"
-msgstr "Editar Spans && Divs"
-
-#: main.py:78
-msgid "Edit current file only"
-msgstr "Editar solo el archivo actual"
-
-#: main.py:82
-msgid "Customize"
-msgstr "Configurar"
-
-#: main.py:93 main.py:210 main.py:334
-msgid "No book open"
-msgstr "No hay libro abierto"
-
-#: main.py:94 main.py:211 main.py:335
-msgid "Need to have a book open first."
-msgstr "Necesitas abrir primero un libro."
-
-#: main.py:98 main.py:215 main.py:339
-msgid "Cannot Process"
-msgstr "No puede procesarlo"
-
-#: main.py:99 main.py:216
-msgid "No file open for editing or the current file is not an (x)html file."
-msgstr ""
-"No hay ning´ñun archivo abierto en edición o el archivo actual no es un "
-"archivo (x)html."
-
-#: main.py:111
-msgid "Before: Span Div Edit"
-msgstr "Antes de: Edición de Span y Div"
-
-#: main.py:118 main.py:234 main.py:353
-msgid "Failed"
-msgstr "Fallo"
-
-#: main.py:119
-msgid "Failed to process divs or spans, click \"Show details\" for more info"
-msgstr ""
-"Fallo al procesar divs o spans, pulsa \"Mostrar detalles\" para más "
-"información"
-
-#: main.py:134
-msgid "Nothing changed"
-msgstr "Nada ha cambiado"
-
-#: main.py:135
-msgid "Nothing matching your criteria was found."
-msgstr "No se ha encontrado nada que coincida con tu criterio"
-
-#: main.py:149
-msgid "Parsing"
-msgstr "Parseando"
-
-#: main.py:197
-msgid "Smarten current file only"
-msgstr "Arreglar solo el archivo actual"
-
-#: main.py:227
-msgid "Before: Smarten Punctuation"
-msgstr "Antes: Arreglar Puntuación"
-
-#: main.py:235
-msgid "Failed to smarten punctuation, click \"Show details\" for more info"
-msgstr ""
-"Fallo al arreglar la puntuación, pulsa \"Mostrar detalles\" para más "
-"información"
-
-#: main.py:250
-msgid "Nothing smartened"
-msgstr "No se ha arreglado nada"
-
-#: main.py:251
-msgid "No punctuation meeting your criteria was found to smarten."
-msgstr ""
-"No se ha encontrado ninguna puntuación que arreglar que cumpla con tu "
-"criterio."
-
-#: main.py:264
-msgid "Smartening"
-msgstr "Arreglando"
-
-#: main.py:312
-msgid "Convert CSS cm to em"
-msgstr "Convertir cm en CSS to em"
-
-#: main.py:321
-msgid "Convert current CSS file only"
-msgstr "Convertir solo el actual archivo CSS"
-
-#: main.py:340
-msgid "No file open for editing or the current file is not a CSS file."
-msgstr ""
-"No hay ning´ñun archivo abierto en edición o el archivo actual no es un "
-"archivo CSS."
-
-#: main.py:346
-msgid "Before: Convert CM to EM"
-msgstr "Antes de: Convertir CM a EM"
-
-#: main.py:354
-msgid "Failed to convert CMs to EMs, click \"Show details\" for more info"
-msgstr ""
-"Fallo al convertir CMs a EMs, pulsa \"Mostrar detalles\" para más información"
-
-#: main.py:369
-msgid "Nothing Converted"
-msgstr "No se ha convertido nada"
-
-#: main.py:370
-msgid "No CM dimensions were found to convert."
-msgstr "No se han encontrado dimensiones CM que convertir."
-
-#: span_div_config.py:57
-msgid "Edit Spans & Divs Customization"
-msgstr "Configuración de Editar Spans & Divs"
-
-#: span_div_config.py:89
-msgid ""
-"Comma separated list of html elements (no quotes, no angle \"&lt;\" "
-"brackets)."
-msgstr ""
-"Lista separada por comas de elementos html (sin comillas ni corchetes \"&lt;"
-"\" )."
-
-#: span_div_config.py:97
-msgid "<b>Choices to change \"{}\" elements to:</b>"
-msgstr "<b>Los elementos \"{}\" se pueden cambiar a:</b>"
-
-#: span_div_config.py:117
-msgid "<b>Tags available to search for:</b>"
-msgstr ""
-
-#: span_div_config.py:120
-msgid "Comma separated list of html tag names (no quotes)."
-msgstr ""
-
-#: span_div_config.py:124
-msgid "<b>HTML attributes available to search for:</b>"
-msgstr "<b>Atributos HTML disponibles por los que buscar:</b>"
-
-#: span_div_config.py:127
-msgid "Comma separated list of html attribute names (no quotes)."
-msgstr "Lista separada por comas de nombres de atributos html (sin comillas)."
-
-#: span_div_config.py:135
-msgid "Reset all defaults"
-msgstr "Resetear todos los valores por defecto"
-
-#: span_div_config.py:136
-msgid "Reset all settings to original defaults."
-msgstr "Resetar todas las opciones a sus valores originales."
-
-#: span_div_config.py:162
-msgid "Are you sure?"
-msgstr "¿Estás seguro?"
-
-#: span_div_config.py:163
-msgid "Reset all customizable options to their original defaults?"
-msgstr ""
-"¿Reseteo todas las opciones configurables a sus valores originales por "
-"defecto?"
