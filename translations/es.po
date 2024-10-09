@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: Diaps Editing Toolbag plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-09 12:48+0000\n"
-"PO-Revision-Date: 2019-12-19 11:24-0500\n"
+"PO-Revision-Date: 2024-10-09 19:49+0200\n"
 "Last-Translator: Terisa de morgan <terisam@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2\n"
 
 #: dialogs.py:82
 msgid "Edit Spans & Divs"
@@ -196,7 +196,7 @@ msgstr "Nada ha cambiado"
 
 #: main.py:135
 msgid "Nothing matching your criteria was found."
-msgstr "No se ha encontrado nada que coincida con tu criterio"
+msgstr "No se ha encontrado nada que coincida con tu criterio."
 
 #: main.py:149
 msgid "Parsing"
@@ -279,11 +279,11 @@ msgstr "<b>Los elementos \"{}\" se pueden cambiar a:</b>"
 
 #: span_div_config.py:117
 msgid "<b>Tags available to search for:</b>"
-msgstr ""
+msgstr "<b>Etiquetas disponibles por las que buscar:</b>"
 
 #: span_div_config.py:120
 msgid "Comma separated list of html tag names (no quotes)."
-msgstr ""
+msgstr "Lista separada por comas de nombres de etiquetas HTML (sin comillas)."
 
 #: span_div_config.py:124
 msgid "<b>HTML attributes available to search for:</b>"
