@@ -42,14 +42,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8
 
-    - name: Update language files
-      run: |
-        bash ./trans.sh
-
     - name: Lint with flake8
       run: |
         flake8 --verbose .
   
+    - name: Update language files
+      run: |
+        bash ./trans.sh
+
     - name: Build Plugin
       run: |
         python setup.py
@@ -73,6 +73,8 @@ jobs:
         commit_user_email: actions-bot@example.org
         commit_author: Doug Massay <dougmassay@users.noreply.github.com>
         commit_message: Update modified po files
+        file_pattern: 'translations/*.po translations/*.pot'
+        status_options: '--untracked-files=no'
 
     - name: Create Release
       if: startswith( github.ref, 'refs/tags/')
