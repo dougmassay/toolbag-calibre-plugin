@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Diaps Editing Toolbag plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 19:56+0000\n"
+"POT-Creation-Date: 2024-10-08 21:32-0400\n"
 "PO-Revision-Date: 2019-12-19 11:27-0500\n"
 "Last-Translator: Nicolas F.\n"
 "Language-Team: \n"
@@ -282,37 +282,37 @@ msgstr ""
 msgid "<b>Choices to change \"{}\" elements to:</b>"
 msgstr "<b>Choix pour remplacer la balise \"{}\" :</ b>"
 
-#: span_div_config.py:114
+#: span_div_config.py:117
 msgid "<b>Tags available to search for:</b>"
 msgstr "<b>Balises disponibles à rechercher:"
 
-#: span_div_config.py:117
+#: span_div_config.py:120
 msgid "Comma separated list of html tag names (no quotes)."
 msgstr ""
 "Liste de noms de balises HTML séparés par des virgules (sans guillemets)"
 
-#: span_div_config.py:121
+#: span_div_config.py:124
 msgid "<b>HTML attributes available to search for:</b>"
 msgstr "<b>Attributs HTML pouvant être recherchés :</ b>"
 
-#: span_div_config.py:124
+#: span_div_config.py:127
 msgid "Comma separated list of html attribute names (no quotes)."
 msgstr ""
 "Liste séparée par des virgules des noms d'attributs html (sans guillemets)."
 
-#: span_div_config.py:132
+#: span_div_config.py:135
 msgid "Reset all defaults"
 msgstr "Restaurer les valeurs par défaut"
 
-#: span_div_config.py:133
+#: span_div_config.py:136
 msgid "Reset all settings to original defaults."
 msgstr "Restaurer tous les réglages à leurs valeurs par défaut."
 
-#: span_div_config.py:159
+#: span_div_config.py:162
 msgid "Are you sure?"
 msgstr "Êtes-vous sûr ?"
 
-#: span_div_config.py:160
+#: span_div_config.py:163
 msgid "Reset all customizable options to their original defaults?"
 msgstr ""
 "Réinitialiser toutes les options personnalisables à leurs valeurs par défaut "

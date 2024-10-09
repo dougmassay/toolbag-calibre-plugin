@@ -96,7 +96,10 @@ class ConfigWidget(Dialog):
             # Add lable and QLineEdit widget to current column.
             label = QLabel(_('<b>Choices to change "{}" elements to:</b>').format(tag), self)
             label.setAlignment(Qt.AlignCenter)
-            self.qlinedit_widgets[tag] = QLineEdit(', '.join(plugin_prefs['{}_changes'.format(tag)]), self)
+            changes_str = ''
+            if '{}_changes'.format(tag) in plugin_prefs:
+                changes_str = ', '.join(plugin_prefs['{}_changes'.format(tag)])
+            self.qlinedit_widgets[tag] = QLineEdit(changes_str, self)
             self.qlinedit_widgets[tag].setToolTip('<p>{}'.format(tooltip))
             column[curr_col].addWidget(label)
             column[curr_col].addWidget(self.qlinedit_widgets[tag])
